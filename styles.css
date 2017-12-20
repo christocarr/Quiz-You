@@ -1,0 +1,29 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #fff8e1;
+	font-size: 14px;
+}
+
+.wrapper {
+	background-color: #ffa000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+.question-wrapper {
+	width: 70vw;
+	text-align: center;
+	border: 1px solid white;
+	margin-bottom: 0.5em;
+}
+
+.answer-wrapper {
+	width: 70vw;
+	text-align: center;
+	border: 1px solid white; 
+}
