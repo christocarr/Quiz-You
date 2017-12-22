@@ -30,14 +30,22 @@ body {
 	margin-bottom: 0.5em;
 }
 
+.answer-wrapper p {
+	width: 50%;
+	margin: 0.5em auto;
+	padding: 0.5em;
+	cursor: pointer;
+}
+
 .submit {
-	width: 35vw;
+	width: 33vw;
 	float: right;
 }
 
 .back {
-	width: 35vw;
+	width: 33vw;
 	float: left;
+	margin-right: 4vw;
 }
 
 button:hover {
