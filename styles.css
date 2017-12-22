@@ -30,6 +30,16 @@ body {
 	margin-bottom: 0.5em;
 }
 
-button {
-	width: 70vw;
+.submit {
+	width: 35vw;
+	float: right;
+}
+
+.back {
+	width: 35vw;
+	float: left;
+}
+
+button:hover {
+	cursor: pointer;
 }

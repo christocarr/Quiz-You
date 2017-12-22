@@ -6,6 +6,8 @@ let choiceThree = document.getElementById('choiceThree');
 
 let submit = document.getElementById('submit');
 
+let score = document.getElementById('score');
+
 const questions = { 
 	questionOne: { 
 		question : 'What is the capital of South Africa?', 
@@ -25,8 +27,8 @@ choiceOne.innerHTML = questions.questionOne.answers[0];
 choiceTwo.innerHTML = questions.questionOne.answers[1];
 choiceThree.innerHTML = questions.questionOne.answers[2];
 
-console.log(questionContainer);
-
 submit.onclick = () => { 
 	
 }
+
+score.innerHTML = '1';
