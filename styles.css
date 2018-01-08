@@ -30,7 +30,8 @@ body {
 	margin-bottom: 0.5em;
 }
 
-.answer-wrapper p {
+.answer-wrapper label {
+	display: inline-block;
 	width: 50%;
 	margin: 0.5em auto;
 	padding: 0.5em;

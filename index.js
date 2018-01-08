@@ -7,6 +7,7 @@ let choiceThree = document.getElementById('choiceThree');
 let submit = document.getElementById('submit');
 
 let score = document.getElementById('score');
+let currentScore = 0;
 
 const questions = { 
 	questionOne: { 
@@ -23,12 +24,18 @@ const questions = {
 									 
 questionContainer.innerHTML = questions.questionOne.question;
 
-choiceOne.innerHTML = questions.questionOne.answers[0];
-choiceTwo.innerHTML = questions.questionOne.answers[1];
-choiceThree.innerHTML = questions.questionOne.answers[2];
+choiceOneLabel.innerHTML = questions.questionOne.answers[0];
+choiceTwoLabel.innerHTML = questions.questionOne.answers[1];
+choiceThreeLabel.innerHTML = questions.questionOne.answers[2];
 
 submit.onclick = () => { 
 	
+	if (questions.questionOne.answers.find  questions.questionOne.correctAnswer) {
+	
+		currentScore ++ ;
+	}
+	
+	score.innerHTML = currentScore;
+	
 }
 
-score.innerHTML = '1';
