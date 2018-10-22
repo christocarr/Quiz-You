@@ -1,12 +1,14 @@
 (function() {
 	let questionContainer = document.getElementById('question');
+	let answerWrapper = document.getElementById('answerWrapper');
 
 	let choiceOne = document.getElementById('choiceOne');
 	let choiceOneTwo = document.getElementById('choiceTwo');
 	let choiceThree = document.getElementById('choiceThree');
 
-	let submit = document.getElementById('submit');
+	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
+	const FORM = document.getElementById('answers');
 
 	let score = document.getElementById('score');
 	let currentScore = 0;
@@ -23,21 +25,33 @@
 			correctAnswer: 'Mississippi'
 		}
 	}
-										
-	questionContainer.innerHTML = questions.questionOne.question;
 
-	choiceOneLabel.innerHTML = questions.questionOne.answers[0];
-	choiceTwoLabel.innerHTML = questions.questionOne.answers[1];
-	choiceThreeLabel.innerHTML = questions.questionOne.answers[2];
-
+	//display welcome message on app startup
+	questionContainer.innerHTML = 'Welcome to Quiz You';
+	//hide form on startup
+	FORM.style.display = 'none';
+	//display rules on startup
+	let p = document.createElement('p');
+	p.innerHTML = 'Click Start to begin the quiz. More rules to come...';
+	answerWrapper.appendChild(p);
 	//hide next button on app startup
 	submit.style.display = 'none';
+
 	//display next(submit) button when start button clicked
 	START.onclick = () => { 
-		console.log('start');
 		submit.style.display = 'block';
 		//hide start button
 		START.style.display = 'none';
+		//display first question and multiple choice answers
+		questionContainer.innerHTML = questions.questionOne.question;
+		//display form and hide rules
+		FORM.style.display = 'block';
+		p.style.display = 'none';
+		choiceOneLabel.innerHTML = questions.questionOne.answers[0];
+		choiceTwoLabel.innerHTML = questions.questionOne.answers[1];
+		choiceThreeLabel.innerHTML = questions.questionOne.answers[2];
 	}
+
+
 })()
 
