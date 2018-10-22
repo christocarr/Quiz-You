@@ -6,6 +6,7 @@
 	let choiceThree = document.getElementById('choiceThree');
 
 	let submit = document.getElementById('submit');
+	const START = document.getElementById('startButton');
 
 	let score = document.getElementById('score');
 	let currentScore = 0;
@@ -29,15 +30,14 @@
 	choiceTwoLabel.innerHTML = questions.questionOne.answers[1];
 	choiceThreeLabel.innerHTML = questions.questionOne.answers[2];
 
-	// submit.onclick = () => { 
-		
-	// 	if (questions.questionOne.answers.find  questions.questionOne.correctAnswer) {
-		
-	// 		currentScore ++ ;
-	// 	}
-		
-	// 	score.innerHTML = currentScore;
-		
-	// }
+	//hide next button on app startup
+	submit.style.display = 'none';
+	//display next(submit) button when start button clicked
+	START.onclick = () => { 
+		console.log('start');
+		submit.style.display = 'block';
+		//hide start button
+		START.style.display = 'none';
+	}
 })()
 
