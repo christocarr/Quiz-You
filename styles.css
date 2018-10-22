@@ -38,6 +38,11 @@ body {
 	cursor: pointer;
 }
 
+.start-button {
+	width: 33vw;
+	float: right;
+}
+
 .submit {
 	width: 33vw;
 	float: right;
