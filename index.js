@@ -13,18 +13,18 @@
 	let score = document.getElementById('score');
 	let currentScore = 0;
 
-	const questions = { 
-		questionOne: { 
-			question : 'What is the capital of South Africa?', 
-			answers : ['Johannesburg', 'Cape Town', 'Pretoria'],
+	const QUESTIONS = [
+		questionOne = {
+			question: 'What is the capital of South Africa?',
+			answers: ['Johannesburg', 'Cape Town', 'Pretoria'],
 			correctAnswer: 'Pretoria'
 		},
-		questionTwo: {
+		questionTwo = {
 			question: 'What is the longest river in USA?',
 			answers: ['Danube', 'Mississippi', 'Dakota'],
 			correctAnswer: 'Mississippi'
-		}
-	}
+		},
+	];
 
 	//display welcome message on app startup
 	questionContainer.innerHTML = 'Welcome to Quiz You';
@@ -43,13 +43,17 @@
 		//hide start button
 		START.style.display = 'none';
 		//display first question and multiple choice answers
-		questionContainer.innerHTML = questions.questionOne.question;
+		questionContainer.innerHTML = QUESTIONS[0].question;
 		//display form and hide rules
 		FORM.style.display = 'block';
 		p.style.display = 'none';
-		choiceOneLabel.innerHTML = questions.questionOne.answers[0];
-		choiceTwoLabel.innerHTML = questions.questionOne.answers[1];
-		choiceThreeLabel.innerHTML = questions.questionOne.answers[2];
+		choiceOneLabel.innerHTML = QUESTIONS[0].answers[0];
+		choiceTwoLabel.innerHTML = QUESTIONS[0].answers[1];
+		choiceThreeLabel.innerHTML = QUESTIONS[0].answers[2];
+	}
+
+	SUBMIT.onclick= () => {
+		checkAnswer();
 	}
 
 
