@@ -53,7 +53,12 @@
 	}
 
 	SUBMIT.onclick= () => {
-		checkAnswer();
+		// checkAnswer();
+		changeQuestion();
+	}
+
+	let changeQuestion = () => {
+		console.log('question changed')
 	}
 
 
