@@ -13,6 +13,8 @@
 	let score = document.getElementById('score');
 	let currentScore = 0;
 
+	let currentQuestion = 0;
+
 	const QUESTIONS = [
 		questionOne = {
 			question: 'What is the capital of South Africa?',
@@ -54,11 +56,19 @@
 
 	SUBMIT.onclick= () => {
 		// checkAnswer();
-		changeQuestion();
+		nextQuestion();
 	}
 
-	let changeQuestion = () => {
-		console.log('question changed')
+	let nextQuestion = () => {
+		//get next question and answers in questions array
+		currentQuestion++;
+		let index = currentQuestion;
+    //output question and answers to containers
+		questionContainer.innerHTML = QUESTIONS[index].question;
+		choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
+		choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
+		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
+		
 	}
 
 
