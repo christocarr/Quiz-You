@@ -26,6 +26,11 @@
 			answers: ['Danube', 'Mississippi', 'Dakota'],
 			correctAnswer: 'Mississippi'
 		},
+		questionThree = {
+			question: 'Can you change the value of a const variable?',
+			answers: ['No', 'Yes'],
+			correctAnswer: 'No'
+		},
 	];
 
 	//display welcome message on app startup
