@@ -15,6 +15,7 @@
 
 	let score = document.getElementById('score');
 	let currentScore = 0;
+	score.innerHTML += ` ${currentScore}`;
 
 	let currentQuestion = 0;
 
@@ -71,12 +72,16 @@
 	});
 
 	SUBMIT.onclick= () => {
-		// checkAnswer();
+		checkAnswer();
 		nextQuestion();
 		submit.disabled = true;
 		choicesArray.forEach(function(elem) {
 			elem.checked = false;
 		})
+	}
+
+	let checkAnswer = () => {
+		console.log('checking answer');
 	}
 
 	let nextQuestion = () => {
@@ -88,7 +93,6 @@
 		choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
 		choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
 		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
-		
 	}
 
 })()
