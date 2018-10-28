@@ -6,6 +6,9 @@
 	let choiceOneTwo = document.getElementById('choiceTwo');
 	let choiceThree = document.getElementById('choiceThree');
 
+	const CHOICES = document.getElementsByTagName('input');
+	let choicesArray = [...CHOICES];
+
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
 	const FORM = document.getElementById('answers');
@@ -44,9 +47,11 @@
 	//hide next button on app startup
 	submit.style.display = 'none';
 
-	//display next(submit) button when start button clicked
 	START.onclick = () => { 
+		//display next(submit button)
 		submit.style.display = 'block';
+		//disable next(submit) button before user chooses answer
+		submit.disabled = true;
 		//hide start button
 		START.style.display = 'none';
 		//display first question and multiple choice answers
@@ -59,9 +64,19 @@
 		choiceThreeLabel.innerHTML = QUESTIONS[0].answers[2];
 	}
 
+	choicesArray.forEach(function(elem) {
+		elem.addEventListener('click', function(){
+			SUBMIT.disabled = false;
+		})
+	});
+
 	SUBMIT.onclick= () => {
 		// checkAnswer();
 		nextQuestion();
+		submit.disabled = true;
+		choicesArray.forEach(function(elem) {
+			elem.checked = false;
+		})
 	}
 
 	let nextQuestion = () => {
@@ -75,7 +90,6 @@
 		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
 		
 	}
-
 
 })()
 
