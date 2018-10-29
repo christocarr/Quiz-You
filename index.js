@@ -2,9 +2,16 @@
 	let questionContainer = document.getElementById('question');
 	let answerWrapper = document.getElementById('answerWrapper');
 
+
+	//get radio buttons
 	let choiceOne = document.getElementById('choiceOne');
 	let choiceOneTwo = document.getElementById('choiceTwo');
 	let choiceThree = document.getElementById('choiceThree');
+
+	//get radio button labels
+	let choiceOneLabel = document.getElementById('choiceOneLabel');
+	let choiceOneTwoLabel = document.getElementById('choiceTwoLabel');
+	let choiceThreeLabel = document.getElementById('choiceThreeLabel');
 
 	const CHOICES = document.getElementsByTagName('input');
 	let choicesArray = [...CHOICES];
@@ -55,14 +62,12 @@
 		submit.disabled = true;
 		//hide start button
 		START.style.display = 'none';
-		//display first question and multiple choice answers
-		questionContainer.innerHTML = QUESTIONS[0].question;
 		//display form and hide rules
 		FORM.style.display = 'block';
 		p.style.display = 'none';
-		choiceOneLabel.innerHTML = QUESTIONS[0].answers[0];
-		choiceTwoLabel.innerHTML = QUESTIONS[0].answers[1];
-		choiceThreeLabel.innerHTML = QUESTIONS[0].answers[2];
+		let index = 0;
+		//dipslay first question
+		displayQuestion(index);
 	}
 
 	choicesArray.forEach(function(elem) {
@@ -80,6 +85,14 @@
 		})
 	}
 
+	let displayQuestion = (index) => {
+		questionContainer.innerHTML = QUESTIONS[index].question;
+
+		choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
+		choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
+		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
+	}
+
 	let checkAnswer = () => {
 		console.log('checking answer');
 	}
@@ -88,11 +101,7 @@
 		//get next question and answers in questions array
 		currentQuestion++;
 		let index = currentQuestion;
-    //output question and answers to containers
-		questionContainer.innerHTML = QUESTIONS[index].question;
-		choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
-		choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
-		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
+		displayQuestion(index);
 	}
 
 })()
