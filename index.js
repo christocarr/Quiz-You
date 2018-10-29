@@ -5,12 +5,12 @@
 
 	//get radio buttons
 	let choiceOne = document.getElementById('choiceOne');
-	let choiceOneTwo = document.getElementById('choiceTwo');
+	let choiceTwo = document.getElementById('choiceTwo');
 	let choiceThree = document.getElementById('choiceThree');
 
 	//get radio button labels
 	let choiceOneLabel = document.getElementById('choiceOneLabel');
-	let choiceOneTwoLabel = document.getElementById('choiceTwoLabel');
+	let choiceTwoLabel = document.getElementById('choiceTwoLabel');
 	let choiceThreeLabel = document.getElementById('choiceThreeLabel');
 
 	const CHOICES = document.getElementsByTagName('input');
@@ -77,7 +77,6 @@
 	});
 
 	SUBMIT.onclick= () => {
-		checkAnswer();
 		nextQuestion();
 		submit.disabled = true;
 		choicesArray.forEach(function(elem) {
@@ -91,10 +90,28 @@
 		choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
 		choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
 		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
+
+		//get values of labels
+		let choiceOneStr = choiceOneLabel.innerHTML;
+		let choiceTwoStr = choiceTwoLabel.innerHTML;
+		let choiceThreeStr = choiceThreeLabel.innerHTML;
+
+		// //get values of radio buttons
+		// let choiceOneVal = choiceOne.checked;
+		// let choiceTwoVal = choiceTwo.checked;
+		// let choiceThreeVal = choiceThree.checked;
+		// let selected;
+		// if (choiceOneVal || choiceTwoVal || choiceThreeVal) {
+		// 	selected = "checked";
+		// }
+		let selected = document.querySelectorAll('input[type="radio"]:checked');
+		console.log(selected);
+
+		checkAnswer(choiceThreeStr,choiceOneStr,choiceTwoStr);
 	}
 
-	let checkAnswer = () => {
-		console.log('checking answer');
+	let checkAnswer = (choiceThreeStr, choiceOneStr, choiceTwoStr) => {
+		console.log(choiceThreeStr, choiceOneStr, choiceTwoStr);
 	}
 
 	let nextQuestion = () => {
