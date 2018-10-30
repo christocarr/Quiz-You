@@ -1,7 +1,7 @@
 (function() {
 	let questionContainer = document.getElementById('question');
 	let answerWrapper = document.getElementById('answerWrapper');
-
+	let instWrapper = document.getElementById('instWrapper');
 
 	//get radio buttons
 	let choiceOne = document.getElementById('choiceOne');
@@ -49,9 +49,16 @@
 	//hide form on startup
 	FORM.style.display = 'none';
 	//display rules on startup
-	let p = document.createElement('p');
-	p.innerHTML = 'Click Start to begin the quiz. More rules to come...';
-	answerWrapper.appendChild(p);
+	let startText = document.createElement('p');
+	let instOne = document.createElement('p');
+	startText.innerHTML = 'Click Start to begin the quiz.';
+	instOne.innerHTML = 'Please select an answer to move onto the next question';
+	let instArr = [];
+	instArr.push(instOne, startText);
+	instArr.forEach(function(para) {
+		instWrapper.appendChild(para);
+	})
+
 	//hide next button on app startup
 	submit.style.display = 'none';
 
@@ -64,7 +71,7 @@
 		START.style.display = 'none';
 		//display form and hide rules
 		FORM.style.display = 'block';
-		p.style.display = 'none';
+		instWrapper.style.display = 'none';
 		let index = 0;
 		//dipslay first question
 		displayQuestion(index);
