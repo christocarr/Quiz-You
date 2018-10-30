@@ -71,9 +71,10 @@
 		START.style.display = 'none';
 		//display form and hide rules
 		FORM.style.display = 'block';
+		//hide instructions 
 		instWrapper.style.display = 'none';
-		let index = 0;
 		//dipslay first question
+		let index = 0;
 		displayQuestion(index);
 	}
 
@@ -83,16 +84,26 @@
 			SUBMIT.disabled = false;
 			//get user choice when radio button clicked
 			let userSelected = document.querySelectorAll('input[type="radio"]:checked');
-			checkAnswer(userSelected);
+			//get correct answer;
+			let correctAnswer = QUESTIONS[currentQuestion].correctAnswer;
+			checkAnswer(userSelected, correctAnswer);
 		})
 	});
 
-	SUBMIT.onclick= () => {
+	let checkAnswer = (userSelected, correctAnswer) => {
+		let userAnswer = userSelected[0].previousElementSibling.innerHTML;
+		if(correctAnswer === userAnswer) {
+			currentScore++;
+		}
+	}
+
+	SUBMIT.onclick = () => {
 		nextQuestion();
 		submit.disabled = true;
 		choicesArray.forEach(function(elem) {
 			elem.checked = false;
 		})
+		score.innerHTML = `Score: ${currentScore}`;
 	}
 
 	let displayQuestion = (index) => {
@@ -101,11 +112,6 @@
 		choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
 		choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
 		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
-	}
-
-	let checkAnswer = (userSelected) => {
-		let userAnswer = userSelected[0].previousElementSibling.innerHTML;
-		
 	}
 
 	let nextQuestion = () => {
