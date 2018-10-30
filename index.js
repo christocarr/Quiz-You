@@ -42,6 +42,12 @@
 			answers: ['No', 'Yes'],
 			correctAnswer: 'No'
 		},
+		questionFour = {
+			question: `What's the correct JS syntax to change the content of the HTML element?
+		   <p id="demo">This is a demo</p>`,
+			answers: [1,2,3],
+			correctAnswer: '1'
+		},
 	];
 
 	//display welcome message on app startup
