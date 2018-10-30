@@ -57,10 +57,12 @@
 	//display rules on startup
 	let startText = document.createElement('p');
 	let instOne = document.createElement('p');
+	let pointsText = document.createElement('p');
 	startText.innerHTML = 'Click Start to begin the quiz.';
+	pointsText.innerHTML = 'One point is awarded for every correctly answered question';
 	instOne.innerHTML = 'Please select an answer to move onto the next question';
 	let instArr = [];
-	instArr.push(instOne, startText);
+	instArr.push(instOne, pointsText, startText);
 	instArr.forEach(function(para) {
 		instWrapper.appendChild(para);
 	})
