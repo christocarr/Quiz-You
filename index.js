@@ -1,7 +1,7 @@
 (function() {
 	let questionContainer = document.getElementById('question');
 	let answerWrapper = document.getElementById('answerWrapper');
-	let instWrapper = document.getElementById('instWrapper');
+	let startScreen = document.getElementById('startScreen');
 
 	//get radio buttons
 	let choiceOne = document.getElementById('choiceOne');
@@ -50,22 +50,9 @@
 		},
 	];
 
-	//display welcome message on app startup
-	questionContainer.innerHTML = 'Welcome to Quiz You';
-	//hide form on startup
-	FORM.style.display = 'none';
-	//display rules on startup
-	let startText = document.createElement('p');
-	let instOne = document.createElement('p');
-	let pointsText = document.createElement('p');
-	startText.innerHTML = 'Click Start to begin the quiz.';
-	pointsText.innerHTML = 'One point is awarded for every correctly answered question';
-	instOne.innerHTML = 'Please select an answer to move onto the next question';
-	let instArr = [];
-	instArr.push(instOne, pointsText, startText);
-	instArr.forEach(function(para) {
-		instWrapper.appendChild(para);
-	})
+	//hide question and answers on startup
+	questionContainer.style.display = 'none';
+	answerWrapper.style.display = 'none';
 
 	//hide next button on app startup
 	submit.style.display = 'none';
@@ -77,10 +64,11 @@
 		submit.disabled = true;
 		//hide start button
 		START.style.display = 'none';
-		//display form and hide rules
-		FORM.style.display = 'block';
+		//display question and answers
+		questionContainer.style.display = 'block';
+		answerWrapper.style.display = 'block';
 		//hide instructions 
-		instWrapper.style.display = 'none';
+		startScreen.style.display = 'none';
 		//dipslay first question
 		let index = 0;
 		displayQuestion(index);
