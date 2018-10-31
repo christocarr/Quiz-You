@@ -15,6 +15,13 @@ body {
 	height: 100vh;
 }
 
+.start-screen {
+	width: 70vw;
+	text-align: center;
+	border: 1px solid white; 
+	margin-bottom: 0.5em;
+}
+
 .question-wrapper {
 	width: 70vw;
 	text-align: center;
