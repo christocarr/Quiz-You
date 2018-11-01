@@ -8,4 +8,4 @@ A simple quiz game to test your front end development knowledge.
 
 Can't show less than three answers. If two answers are sent to the DOM a value of undefined is shown for the third.
 
-Need to display html and js syntax to display relevant questions(template literals). Also, need to set up the instructions with template literals
+Need to display html and js syntax to display relevant questions.
