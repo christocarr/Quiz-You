@@ -14,6 +14,7 @@
 	let choiceThreeLabel = document.getElementById('choiceThreeLabel');
 
 	const CHOICES = document.getElementsByTagName('input');
+	console.log(CHOICES);
 	let choicesArray = [...CHOICES];
 
 	const SUBMIT = document.getElementById('submit');
@@ -104,10 +105,31 @@
 
 	let displayQuestion = (index) => {
 		questionContainer.innerHTML = QUESTIONS[index].question;
+		const ANSWERS = QUESTIONS[index].answers;
+		ANSWERS.forEach((answer, index) => {
+			console.log(answer, index);
+			let markup = createMarkup(answer, index);
+			let answerContainer = document.createElement('div');
+			answerContainer.innerHTML = markup;
+			answerWrapper.appendChild(answerContainer);
+		})
 
-		choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
-		choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
-		choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
+		function createMarkup(answer, index) {
+			return `
+				<label for="choice${index}" id="choice${index}Label">${answer}</label>
+				<input type="radio" name="answer" id="choice${index}">
+			`
+		}
+		// choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
+		// choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
+		// choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
+		// <label for="choiceOne" id="choiceOneLabel"></label></input>
+		// <input type="radio" name="answer" id="choiceOne">
+		// <label for="choiceTwo" id="choiceTwoLabel"></label>
+		// <input type="radio" name="answer" id="choiceTwo">
+		// <label for="choiceThree" id="choiceThreeLabel">
+		// </label>
+		// <input type="radio" name="answer" id="choiceThree">
 	}
 
 	let nextQuestion = () => {
