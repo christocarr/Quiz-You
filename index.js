@@ -3,23 +3,10 @@
 	let answerWrapper = document.getElementById('answerWrapper');
 	let startScreen = document.getElementById('startScreen');
 
-	//get radio buttons
-	let choiceOne = document.getElementById('choiceOne');
-	let choiceTwo = document.getElementById('choiceTwo');
-	let choiceThree = document.getElementById('choiceThree');
-
-	//get radio button labels
-	let choiceOneLabel = document.getElementById('choiceOneLabel');
-	let choiceTwoLabel = document.getElementById('choiceTwoLabel');
-	let choiceThreeLabel = document.getElementById('choiceThreeLabel');
-
-	const CHOICES = document.getElementsByTagName('input');
-	console.log(CHOICES);
-	let choicesArray = [...CHOICES];
-
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
-	const FORM = document.getElementById('answers');
+
+	let optionsArr;
 
 	let score = document.getElementById('score');
 	let currentScore = 0;
@@ -76,16 +63,18 @@
 	}
 
 	//enable next button on radio button click
-	choicesArray.forEach(function(elem) {
-		elem.addEventListener('click', function(){
-			SUBMIT.disabled = false;
-			//get user choice when radio button clicked
-			let userSelected = document.querySelectorAll('input[type="radio"]:checked');
-			//get correct answer;
-			let correctAnswer = QUESTIONS[currentQuestion].correctAnswer;
-			checkAnswer(userSelected, correctAnswer);
-		})
-	});
+	function handleSelect(optionsArr) {
+		optionsArr.forEach(function(elem) {
+			elem.addEventListener('click', function(){
+				SUBMIT.disabled = false;
+				//get user choice when radio button clicked
+				let userSelected = document.querySelectorAll('input[type="radio"]:checked');
+				//get correct answer;
+				let correctAnswer = QUESTIONS[currentQuestion].correctAnswer;
+				checkAnswer(userSelected, correctAnswer);
+			})
+		});
+	}
 
 	let checkAnswer = (userSelected, correctAnswer) => {
 		let userAnswer = userSelected[0].previousElementSibling.innerHTML;
@@ -97,19 +86,19 @@
 	SUBMIT.onclick = () => {
 		nextQuestion();
 		submit.disabled = true;
-		choicesArray.forEach(function(elem) {
+		optionsArr.forEach(function(elem) {
 			elem.checked = false;
 		})
 		score.innerHTML = `Score: ${currentScore}`;
 	}
 
 	let displayQuestion = (index) => {
+		answerWrapper.innerHTML = '';
 		questionContainer.innerHTML = QUESTIONS[index].question;
 		const ANSWERS = QUESTIONS[index].answers;
 		ANSWERS.forEach((answer, index) => {
-			console.log(answer, index);
 			let markup = createMarkup(answer, index);
-			let answerContainer = document.createElement('div');
+			answerContainer = document.createElement('div');
 			answerContainer.innerHTML = markup;
 			answerWrapper.appendChild(answerContainer);
 		})
@@ -120,16 +109,10 @@
 				<input type="radio" name="answer" id="choice${index}">
 			`
 		}
-		// choiceOneLabel.innerHTML = QUESTIONS[index].answers[0];
-		// choiceTwoLabel.innerHTML = QUESTIONS[index].answers[1];
-		// choiceThreeLabel.innerHTML = QUESTIONS[index].answers[2];
-		// <label for="choiceOne" id="choiceOneLabel"></label></input>
-		// <input type="radio" name="answer" id="choiceOne">
-		// <label for="choiceTwo" id="choiceTwoLabel"></label>
-		// <input type="radio" name="answer" id="choiceTwo">
-		// <label for="choiceThree" id="choiceThreeLabel">
-		// </label>
-		// <input type="radio" name="answer" id="choiceThree">
+		
+		const OPTIONS = document.getElementsByTagName('input');
+		optionsArr = [...OPTIONS];
+		handleSelect(optionsArr);
 	}
 
 	let nextQuestion = () => {
