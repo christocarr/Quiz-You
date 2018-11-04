@@ -1,4 +1,4 @@
-# quiz-you
+# get-quizzed
 
 Still in the early development stage.
 
