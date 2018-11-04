@@ -1,4 +1,4 @@
-# Quiz-You
+# quiz-you
 
 Still in the early development stage.
 
