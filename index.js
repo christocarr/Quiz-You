@@ -12,7 +12,7 @@
 	let currentScore = 0;
 	score.innerHTML += ` ${currentScore}`;
 
-	let currentQuestion = 0;
+	let answeredQuestions = 0;
 
 	const QUESTIONS = [
 		questionOne = {
@@ -69,7 +69,7 @@
 				//get user choice when radio button clicked
 				let userSelected = document.querySelectorAll('input[type="radio"]:checked');
 				//get correct answer;
-				let correctAnswer = QUESTIONS[currentQuestion].correctAnswer;
+				let correctAnswer = QUESTIONS[answeredQuestions].correctAnswer;
 				checkAnswer(userSelected, correctAnswer);
 			})
 		});
@@ -116,18 +116,18 @@
 
 	let nextQuestion = () => {
 		//get next question and answers in questions array
-		currentQuestion++;
-		let index = currentQuestion;
-
-		displayQuestion(index);
-		
-		//check if end of quiz
-		// if(currentQuestion <= QUESTIONS.length) {
-		// 	displayQuestion(index);
-		// 	console.log(currentQuestion);
-		// } else {
-		// 	displayScore()
-		// }
+		answeredQuestions++;
+		let index = answeredQuestions;
+		let currentQuestion = answeredQuestions + 1;
+		console.log('Answered questions:', answeredQuestions);
+		console.log('Current question:', currentQuestion);
+	
+		//check if end of of questions array
+		if(currentQuestion <= QUESTIONS.length) {
+			displayQuestion(index);
+		} else {
+			displayScore()
+		}
 	}
 
 	let displayScore = () => {
