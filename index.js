@@ -7,11 +7,7 @@
 	const START = document.getElementById('startButton');
 
 	let optionsArr;
-
-	let score = document.getElementById('score');
 	let currentScore = 0;
-	score.innerHTML += ` ${currentScore}`;
-
 	let answeredQuestions = 0;
 
 	const QUESTIONS = [
@@ -88,7 +84,6 @@
 		optionsArr.forEach(function(elem) {
 			elem.checked = false;
 		})
-		score.innerHTML = `Score: ${currentScore}`;
 	}
 
 	let displayQuestion = (index) => {
@@ -119,8 +114,8 @@
 		answeredQuestions++;
 		let index = answeredQuestions;
 		let currentQuestion = answeredQuestions + 1;
-		console.log('Answered questions:', answeredQuestions);
-		console.log('Current question:', currentQuestion);
+		// console.log('Answered questions:', answeredQuestions);
+		// console.log('Current question:', currentQuestion);
 	
 		//check if end of of questions array
 		if(currentQuestion <= QUESTIONS.length) {
@@ -131,6 +126,9 @@
 	}
 
 	let displayScore = () => {
+		questionContainer.style.display = 'none';
+		answerWrapper.innerHTML = `Your score is: ${currentScore}`;
+		submit.style.display = 'none';
 		console.log(currentScore);
 	}
 
