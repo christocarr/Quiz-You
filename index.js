@@ -26,15 +26,14 @@
 			correctAnswer: 'Mississippi'
 		},
 		questionThree = {
-			question: 'Can you change the value of a const variable?',
-			answers: ['No', 'Yes'],
-			correctAnswer: 'No'
+			question: 'What is an axolotl?',
+			answers: ['A species of salamander', 'A mulit-axel vehicle', 'A bone in the human foot'],
+			correctAnswer: 'A species of salamander'
 		},
 		questionFour = {
-			question: `What's the correct JS syntax to change the content of the HTML element?
-		   <p id="demo">This is a demo</p>`,
-			answers: [1,2,3],
-			correctAnswer: '1'
+			question: 'In which Australian state is Darwin?',
+			answers: ['Tasmania', 'Queensland', 'Western Australia', 'Northern Territory'],
+			correctAnswer: 'Northern Territory'
 		},
 	];
 
