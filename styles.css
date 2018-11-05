@@ -11,6 +11,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	height: 100vh;
+	margin: 4em 0 0 0; 
 }
 
 .start-screen {
@@ -45,12 +46,12 @@ body {
 
 .start-button {
 	width: 33vw;
-	float: right;
+	margin: 1em 0 0 0;
 }
 
 .submit {
 	width: 33vw;
-	float: right;
+	margin: 1em 0 0 0;
 }
 
 .back {
