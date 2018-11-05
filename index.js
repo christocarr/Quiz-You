@@ -31,6 +31,16 @@
 			answers: ['Tasmania', 'Queensland', 'Western Australia', 'Northern Territory'],
 			correctAnswer: 'Northern Territory'
 		},
+		questionFive = {
+			question: 'What is a group of dolphins called?',
+			answers: ['Pod', 'School', 'Herd'],
+			correctAnswer: 'Pod'
+		},
+		questionSix = {
+			question: 'Who won the most Academy Awards?',
+			answers: ['Steven Speilberg', 'Walt Disney', 'James Cameron', 'Katherine Hepburn'],
+			correctAnswer: 'Walt Disney'
+		},
 	];
 
 	//hide question and answers on startup
