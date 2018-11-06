@@ -8,4 +8,8 @@ Follow the instruction when the quiz starts up.
 
 Good luck and have fun.
 
+## Future Implementations
+
+A countdown timer to start when the user clicks the start button.
+
 
