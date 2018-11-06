@@ -68,7 +68,7 @@
 		displayQuestion(index);
 
 		//set duration of countdown
-		const THREEMINUTES = 60 * 0.1;
+		const THREEMINUTES = 60 * 0.1;//5 seconds for testing
 		startTimer(THREEMINUTES, timerContainer);
 	}
 
@@ -165,6 +165,7 @@
 
 			if (diff <= 0) {
 				stopTimer();
+				submit.disabled = 'true'; 
 			};
 
 		};
