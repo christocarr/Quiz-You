@@ -12,4 +12,6 @@ Good luck and have fun.
 
 A countdown timer to start when the user clicks the start button.
 
+Darkmode.
+
 
