@@ -1,5 +1,6 @@
 (function() {
 	let questionContainer = document.getElementById('question');
+	let timerContainer = document.getElementById('timer');
 	let answerWrapper = document.getElementById('answerWrapper');
 	let startScreen = document.getElementById('startScreen');
 
@@ -65,7 +66,10 @@
 		//display first question
 		let index = 0;
 		displayQuestion(index);
-		startTimer();
+
+		//set duration of countdown
+		const THREEMINUTES = 60 * 0.1;
+		startTimer(THREEMINUTES, timerContainer);
 	}
 
 	//enable next button on radio button click
@@ -143,8 +147,37 @@
 		console.log(currentScore);
 	}
 
-	function startTimer() {
-		
+	function startTimer(duration, display) {
+
+		let start = Date.now();
+		let diff, min, sec;
+
+		let timer = () => {
+			diff = duration - (((Date.now() - start) / 1000) | 0);
+			//use bitwise to truncate the float
+			min = (diff / 60) | 0;
+			sec = (diff % 60) | 0;
+
+			min = min < 10 ? '0' + min : min;
+			sec = sec < 10 ? '0' + sec : sec;
+
+			display.textContent = min + ':' + sec;
+
+			if (diff <= 0) {
+				stopTimer();
+			};
+
+		};
+
+		//call timer immediately otherwise we wait a full second
+		timer();
+		setInterval(timer, 1000);
+
+		function stopTimer() {
+			clearInterval(timer);
+			console.log("time's up", diff)
+		};
+
 	}
 
 })()
