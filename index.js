@@ -65,6 +65,7 @@
 		//display first question
 		let index = 0;
 		displayQuestion(index);
+		startTimer();
 	}
 
 	//enable next button on radio button click
@@ -140,6 +141,10 @@
 		answerWrapper.innerHTML = `Your score is: ${currentScore}`;
 		submit.style.display = 'none';
 		console.log(currentScore);
+	}
+
+	function startTimer() {
+		
 	}
 
 })()
