@@ -42,6 +42,26 @@
 			answers: ['Steven Speilberg', 'Walt Disney', 'James Cameron', 'Katherine Hepburn'],
 			correctAnswer: 'Walt Disney'
 		},
+		questionSeven = {
+			question: 'Who is the "King of the Gods" in Greek mythology?',
+			answers: ['Apollo', 'Poseidon', 'Dionysus', 'Zeus'],
+			correctAnswer: 'Zeus'
+		},
+		questionEight = {
+			question: 'Clouds are caused by what?',
+			answers: ['Evaporation', 'Melting ice crystals', 'Water vapour condensing'],
+			correctAnswer: 'Water vapour condensing'
+		},
+		questionNine = {
+			question: 'What pastry is used to make profiteroles?',
+			answers: ['Choux', 'Filo', 'Flaky', 'Shortcrust'],
+			correctAnswer: 'Choux'
+		},
+		questionTen = {
+			question: 'The Blue Grotto is a spectacular sea cave on which island?',
+			answers: ['Elba', 'Florence', 'Capri', 'Sardinia'],
+			correctAnswer: 'Capri'
+		},
 	];
 
 	//hide question and answers on startup
@@ -68,8 +88,8 @@
 		displayQuestion(index);
 
 		//set duration of countdown
-		const TWOMINUTES = 60 * 2;
-		startTimer(TWOMINUTES, timerContainer);
+		const ONEMINUTE = 60 * 1;
+		startTimer(ONEMINUTE, timerContainer);
 	}
 
 	//enable next button on radio button click
@@ -151,7 +171,7 @@
 		let diff, min, sec;
 
 		//display the time from start.onclick
-		display.textContent = '02:00';
+		display.textContent = '01:00';
 
 		let timer = setInterval(function() {
 
@@ -176,7 +196,6 @@
 			clearInterval(timer);
 		};
 
-		timer;
 	}
 
 })()
