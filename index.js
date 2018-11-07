@@ -68,8 +68,8 @@
 		displayQuestion(index);
 
 		//set duration of countdown
-		const THREEMINUTES = 60 * 0.1;//5 seconds for testing
-		startTimer(THREEMINUTES, timerContainer);
+		const TWOMINUTES = 60 * 2;
+		startTimer(TWOMINUTES, timerContainer);
 	}
 
 	//enable next button on radio button click
@@ -129,9 +129,7 @@
 		answeredQuestions++;
 		let index = answeredQuestions;
 		let currentQuestion = answeredQuestions + 1;
-		// console.log('Answered questions:', answeredQuestions);
-		// console.log('Current question:', currentQuestion);
-	
+		
 		//check if end of of questions array
 		if(currentQuestion <= QUESTIONS.length) {
 			displayQuestion(index);
@@ -152,8 +150,13 @@
 		let start = Date.now();
 		let diff, min, sec;
 
-		let timer = () => {
+		//display the time from start.onclick
+		display.textContent = '02:00';
+
+		let timer = setInterval(function() {
+
 			diff = duration - (((Date.now() - start) / 1000) | 0);
+			
 			//use bitwise to truncate the float
 			min = (diff / 60) | 0;
 			sec = (diff % 60) | 0;
@@ -167,18 +170,13 @@
 				stopTimer();
 				submit.disabled = 'true'; 
 			};
-
-		};
-
-		//call timer immediately otherwise we wait a full second
-		timer();
-		setInterval(timer, 1000);
+		}, 1000);
 
 		function stopTimer() {
 			clearInterval(timer);
-			console.log("time's up", diff)
 		};
 
+		timer;
 	}
 
 })()
