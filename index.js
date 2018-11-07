@@ -159,10 +159,19 @@
 	}
 
 	let displayScore = () => {
+		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
-		answerWrapper.innerHTML = `Your score is: ${currentScore}`;
+		if (currentScore > 7) {
+			answerWrapper.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
+		} else if ( currentScore > 5 || currentScore === 7 ) {
+			answerWrapper.innerHTML = `You didn't do too badly. Your score is: ${currentScore}`;
+		} else if ( currentScore === 5 || currentScore === 4 ) {
+			answerWrapper.innerHTML = `You can do much better. Your score is: ${currentScore}`;
+		} else {
+			answerWrapper.innerHTML = `Try again. Your score is: ${currentScore}`;
+		}
+		
 		submit.style.display = 'none';
-		console.log(currentScore);
 	}
 
 	function startTimer(duration, display) {
