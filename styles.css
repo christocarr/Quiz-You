@@ -70,3 +70,15 @@ body {
 button:hover {
 	cursor: pointer;
 }
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid black;
+}
+
+.screen-toggle {
+	float: right;
+}
