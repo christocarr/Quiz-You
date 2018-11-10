@@ -4,6 +4,7 @@
 	let answerWrapper = document.getElementById('answerWrapper');
 	let startScreen = document.getElementById('startScreen');
 
+
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
 
@@ -139,6 +140,7 @@
 			`
 		}
 		
+		//get user options and put into array
 		const OPTIONS = document.getElementsByTagName('input');
 		optionsArr = [...OPTIONS];
 		handleNext(optionsArr);
@@ -197,7 +199,7 @@
 
 			if (diff <= 0) {
 				stopTimer();
-				submit.disabled = 'true'; 
+				displayScore(); 
 			};
 		}, 1000);
 
@@ -206,6 +208,12 @@
 		};
 
 	}
+
+	//toggle dark mode
+	darkMode.addEventListener('click', function() {
+		let body = document.getElementsByTagName('body');
+		body.style.backgroundColor = 'black';
+	})
 
 })()
 
