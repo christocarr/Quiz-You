@@ -4,9 +4,9 @@
 	let answerWrapper = document.getElementById('answerWrapper');
 	let startScreen = document.getElementById('startScreen');
 
-
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
+	const SCREEN_TOGGLE = document.getElementById('screenToggle');
 
 	let optionsArr;
 	let currentScore = 0;
@@ -210,9 +210,14 @@
 	}
 
 	//toggle dark mode
-	darkMode.addEventListener('click', function() {
-		let body = document.getElementsByTagName('body');
-		body.style.backgroundColor = 'black';
+	SCREEN_TOGGLE.addEventListener('click', function() {
+		let body = document.querySelector('body');
+		if (body.style.backgroundColor ='white') {
+			body.style.backgroundColor = 'black';
+		} else {
+			body.style.backgroundColor = 'white';
+		}
+		
 	})
 
 })()
