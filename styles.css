@@ -15,20 +15,18 @@ body {
 }
 
 .timer {
-	position: absolute;
-	right: 8em;
-	top: 7em;
+	margin: 0 0 1em 0;
 }
 
 .start-screen {
-	width: 70vw;
+	width: 85vw;
 	text-align: center;
 	border: 1px solid black; 
 	margin-bottom: 0.5em;
 }
 
 .question-wrapper {
-	width: 70vw;
+	width: 85vw;
 	text-align: center;
 	border: 1px solid black;
 	margin-bottom: 0.5em;
@@ -36,7 +34,7 @@ body {
 }
 
 .answer-wrapper {
-	width: 70vw;
+	width: 85vw;
 	text-align: center;
 	border: 1px solid black; 
 	margin-bottom: 0.5em;
@@ -87,5 +85,7 @@ footer {
 }
 
 .screen-toggle {
-	float: right;
+	position: absolute;
+	top: 20px;
+	right: 20px;
 }
