@@ -127,9 +127,7 @@
 
 	let displayScore = () => {
 		questionContainer.style.display = 'none';
-		answerWrapper.innerHTML = `Your score is: ${currentScore}`;
-		submit.style.display = 'none';
-		console.log(currentScore);
+		
 	}
 
 })()
