@@ -160,17 +160,21 @@
 		}
 	}
 
-	let displayScore = () => {
+	let displayScore = (timeUp) => {
+		//if time is not up then delete message
+		if (timeUp === undefined) {
+			timeUp = '';
+		}
 		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
 		if (currentScore > 7) {
 			answerWrapper.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
 		} else if ( currentScore > 5 || currentScore === 7 ) {
-			answerWrapper.innerHTML = `You didn't do too badly. Your score is: ${currentScore}`;
+			answerWrapper.innerHTML = `${timeUp} You didn't do too badly. Your score is: ${currentScore}`;
 		} else if ( currentScore === 5 || currentScore === 4 ) {
-			answerWrapper.innerHTML = `You can do much better. Your score is: ${currentScore}`;
+			answerWrapper.innerHTML = `${timeUp} You can do much better. Your score is: ${currentScore}`;
 		} else {
-			answerWrapper.innerHTML = `Try again. Your score is: ${currentScore}`;
+			answerWrapper.innerHTML = `${timeUp} Try again. Your score is: ${currentScore}`;
 		}
 		
 		submit.style.display = 'none';
@@ -199,7 +203,9 @@
 
 			if (diff <= 0) {
 				stopTimer();
-				displayScore(); 
+				//if time is up then send message to display
+				let timeUp = `Time's up!`
+				displayScore(timeUp); 
 			};
 		}, 1000);
 
