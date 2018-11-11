@@ -201,6 +201,11 @@
 
 			display.textContent = min + ':' + sec;
 
+			//display timer in red when last 10 sec
+			if (sec < 11) {
+				timerContainer.style.color = 'red';
+			}
+		
 			if (diff <= 0) {
 				stopTimer();
 				//if time is up then send message to display
