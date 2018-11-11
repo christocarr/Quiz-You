@@ -10,8 +10,8 @@ Good luck and have fun.
 
 ## Future Implementations
 
-~~A countdown timer to start when the user clicks the start button.
+~~A countdown timer to start when the user clicks the start button.~~
 
-~~Darkmode.
+~~Darkmode.~~
 
 Seperation of concerns. Need to seperate the questions from the code.
