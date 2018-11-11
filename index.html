@@ -12,10 +12,12 @@
 	<body>
 		<div class="wrapper">
 			<h1>Get Quizzed</h1>
+			<div class="timer" id="timer"></div>
 			<div class="start-screen" id="startScreen">
 				<h2>Welcome to Get Quizzed</h2>
 				<p>Please select an answer to move onto the next question</p>
 				<p>One point is awarded for every correctly answered question</p>
+				<p>You have one minute to complete the quiz</p>
 				<p>Click start to begin the quiz</p>
 				<p>Good luck!</p>
 			</div>
@@ -27,10 +29,12 @@
 			</div>
 			<div class="buttons">
 				<button class="start-button" id="startButton">Start</button>
-				<button class="submit" id="submit">Next
-				</button>
+				<button class="submit" id="submit">Next</button>
 			</div>
 		</div>
+		<footer>
+			<button class="screen-toggle" id="screenToggle">Dark Mode</button>
+		</footer>
 		<script src="index.js"></script>
 	</body>
 </html>

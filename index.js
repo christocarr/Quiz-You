@@ -1,10 +1,12 @@
 (function() {
 	let questionContainer = document.getElementById('question');
+	let timerContainer = document.getElementById('timer');
 	let answerWrapper = document.getElementById('answerWrapper');
 	let startScreen = document.getElementById('startScreen');
 
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
+	const SCREEN_TOGGLE = document.getElementById('screenToggle');
 
 	let optionsArr;
 	let currentScore = 0;
@@ -31,6 +33,36 @@
 			answers: ['Tasmania', 'Queensland', 'Western Australia', 'Northern Territory'],
 			correctAnswer: 'Northern Territory'
 		},
+		questionFive = {
+			question: 'What is a group of dolphins called?',
+			answers: ['Pod', 'School', 'Herd'],
+			correctAnswer: 'Pod'
+		},
+		questionSix = {
+			question: 'Who won the most Academy Awards?',
+			answers: ['Steven Speilberg', 'Walt Disney', 'James Cameron', 'Katherine Hepburn'],
+			correctAnswer: 'Walt Disney'
+		},
+		questionSeven = {
+			question: 'Who is the "King of the Gods" in Greek mythology?',
+			answers: ['Apollo', 'Poseidon', 'Dionysus', 'Zeus'],
+			correctAnswer: 'Zeus'
+		},
+		questionEight = {
+			question: 'Clouds are caused by what?',
+			answers: ['Evaporation', 'Melting ice crystals', 'Water vapour condensing'],
+			correctAnswer: 'Water vapour condensing'
+		},
+		questionNine = {
+			question: 'What pastry is used to make profiteroles?',
+			answers: ['Choux', 'Filo', 'Flaky', 'Shortcrust'],
+			correctAnswer: 'Choux'
+		},
+		questionTen = {
+			question: 'The Blue Grotto is a spectacular sea cave on which island?',
+			answers: ['Elba', 'Florence', 'Capri', 'Sardinia'],
+			correctAnswer: 'Capri'
+		},
 	];
 
 	//hide question and answers on startup
@@ -55,6 +87,10 @@
 		//display first question
 		let index = 0;
 		displayQuestion(index);
+
+		//set duration of countdown
+		const ONEMINUTE = 60 * 1;
+		startTimer(ONEMINUTE, timerContainer);
 	}
 
 	//enable next button on radio button click
@@ -104,6 +140,7 @@
 			`
 		}
 		
+		//get user options and put into array
 		const OPTIONS = document.getElementsByTagName('input');
 		optionsArr = [...OPTIONS];
 		handleNext(optionsArr);
@@ -114,9 +151,7 @@
 		answeredQuestions++;
 		let index = answeredQuestions;
 		let currentQuestion = answeredQuestions + 1;
-		// console.log('Answered questions:', answeredQuestions);
-		// console.log('Current question:', currentQuestion);
-	
+		
 		//check if end of of questions array
 		if(currentQuestion <= QUESTIONS.length) {
 			displayQuestion(index);
@@ -126,9 +161,72 @@
 	}
 
 	let displayScore = () => {
+		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
+		if (currentScore > 7) {
+			answerWrapper.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
+		} else if ( currentScore > 5 || currentScore === 7 ) {
+			answerWrapper.innerHTML = `You didn't do too badly. Your score is: ${currentScore}`;
+		} else if ( currentScore === 5 || currentScore === 4 ) {
+			answerWrapper.innerHTML = `You can do much better. Your score is: ${currentScore}`;
+		} else {
+			answerWrapper.innerHTML = `Try again. Your score is: ${currentScore}`;
+		}
 		
+		submit.style.display = 'none';
 	}
+
+	function startTimer(duration, display) {
+
+		let start = Date.now();
+		let diff, min, sec;
+
+		//display the time from start.onclick
+		display.textContent = '01:00';
+
+		let timer = setInterval(function() {
+
+			diff = duration - (((Date.now() - start) / 1000) | 0);
+			
+			//use bitwise to truncate the float
+			min = (diff / 60) | 0;
+			sec = (diff % 60) | 0;
+
+			min = min < 10 ? '0' + min : min;
+			sec = sec < 10 ? '0' + sec : sec;
+
+			display.textContent = min + ':' + sec;
+
+			if (diff <= 0) {
+				stopTimer();
+				displayScore(); 
+			};
+		}, 1000);
+
+		function stopTimer() {
+			clearInterval(timer);
+		};
+
+	}
+
+	//toggle dark mode/light mode
+	SCREEN_TOGGLE.addEventListener('click', function() {
+		let body = document.querySelector('body');
+		const CURRENT_MODE = body.classList.value;
+		if (CURRENT_MODE == '') {
+			body.classList.add('dark-mode');
+			startScreen.classList.add('dark-mode');
+			questionContainer.classList.add('dark-mode');
+			answerWrapper.classList.add('dark-mode');
+			SCREEN_TOGGLE.innerHTML = 'Light Mode';
+		} else {
+			body.classList.remove('dark-mode');
+			startScreen.classList.remove('dark-mode');
+			questionContainer.classList.remove('dark-mode');
+			answerWrapper.classList.remove('dark-mode');
+			SCREEN_TOGGLE.innerHTML = 'Dark Mode';
+		}
+	})
 
 })()
 

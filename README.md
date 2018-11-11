@@ -1,11 +1,17 @@
 # get-quizzed
 
-Still in the early development stage.
+A simple quiz game to test your front end development knowledge. Built with vanilla JavaScript, HTML and CSS.
 
-A simple quiz game to test your front end development knowledge. 
+Download the code and run the ```index.html``` file in your favourite browser.
 
-## Issues
+Follow the instruction when the quiz starts up. 
 
-~~Can't show less than three answers. If two answers are sent to the DOM a value of undefined is shown for the third.~~ Fixed by using DOM manipulation.
+Good luck and have fun.
 
-Need to display html and js syntax to display relevant questions.
+## Future Implementations
+
+A countdown timer to start when the user clicks the start button.
+
+Darkmode.
+
+
