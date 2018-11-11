@@ -79,6 +79,14 @@ footer {
 	border-top: 1px solid black;
 }
 
+/* screen mode toggle styles*/
+
+.dark-mode {
+	background-color: black;
+	color: white;
+	border-color: white;
+}
+
 .screen-toggle {
 	float: right;
 }

@@ -209,15 +209,23 @@
 
 	}
 
-	//toggle dark mode
+	//toggle dark mode/light mode
 	SCREEN_TOGGLE.addEventListener('click', function() {
 		let body = document.querySelector('body');
-		if (body.style.backgroundColor ='white') {
-			body.style.backgroundColor = 'black';
+		const CURRENT_MODE = body.classList.value;
+		if (CURRENT_MODE == '') {
+			body.classList.add('dark-mode');
+			startScreen.classList.add('dark-mode');
+			questionContainer.classList.add('dark-mode');
+			answerWrapper.classList.add('dark-mode');
+			SCREEN_TOGGLE.innerHTML = 'Light Mode';
 		} else {
-			body.style.backgroundColor = 'white';
+			body.classList.remove('dark-mode');
+			startScreen.classList.remove('dark-mode');
+			questionContainer.classList.remove('dark-mode');
+			answerWrapper.classList.remove('dark-mode');
+			SCREEN_TOGGLE.innerHTML = 'Dark Mode';
 		}
-		
 	})
 
 })()
