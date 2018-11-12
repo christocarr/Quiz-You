@@ -12,7 +12,7 @@ header {
 	display: flex;
 	align-content: center;
 	justify-content: center;
-	height: 17vh;
+	height: 20vh;
 }
 
 .wrapper {
@@ -20,18 +20,17 @@ header {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 73vh;
+	height: 70vh;
 }
 
 h1 {
-	margin: 1.5em 0 0 0;
+	margin: 2.5em 0 0 0;
 }
 
 .start-screen {
 	width: 85vw;
 	height: 18em;
 	text-align: center;
-	border: 1px solid black; 
 	margin-bottom: 0.5em;
 }
 
@@ -97,7 +96,6 @@ footer {
 .dark-mode {
 	background-color: black;
 	color: white;
-	border-color: white;
 }
 
 .screen-toggle {
