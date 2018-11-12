@@ -48,6 +48,10 @@ h1 {
 }
 
 .answer-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 85vw;
 	height: 15em;
 	text-align: center;
