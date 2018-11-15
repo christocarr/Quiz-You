@@ -41,7 +41,8 @@ h2 {
 
 .start-screen p {
 	width: 90%;
-	margin: 0 auto 0.5em auto;
+	margin: 0 auto 0.7em auto;
+	letter-spacing: 0.03em;
 }
 
 .question-wrapper {
@@ -110,4 +111,16 @@ footer {
 	position: absolute;
 	top: 12px;
 	right: 12px;
+}
+
+/*******************************************
+----------------- Media Queries-------------
+*******************************************/
+
+/* -----------------411px----------------- */
+
+@media (min-width: 411px) {
+	body {
+		font-size: 16px;
+	}
 }
