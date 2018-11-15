@@ -45,6 +45,10 @@ h2 {
 	letter-spacing: 0.03em;
 }
 
+.timer {
+	font-size: 1.2em;
+}
+
 .question-wrapper {
 	width: 85vw;
 	height: 1.7em;
