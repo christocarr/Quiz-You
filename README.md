@@ -15,3 +15,9 @@ Good luck and have fun.
 ~~Darkmode.~~
 
 Seperation of concerns. Need to seperate the questions from the code.
+
+## Issues
+
+No known issues.
+
+Media queries for medium and larger screens still needs to be coded.
