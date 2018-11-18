@@ -12,7 +12,7 @@ header {
 	display: flex;
 	align-content: center;
 	justify-content: center;
-	height: 17vh;
+	height: 22vh;
 }
 
 .wrapper {
@@ -20,24 +20,33 @@ header {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 73vh;
+	height: 68vh;
 }
 
 h1 {
-	margin: 1.5em 0 0 0;
+	margin: 3em 0 0 0;
+	font-size: 2.5em;
+}
+
+h2 {
+	margin: 0 0 2em 0;
 }
 
 .start-screen {
 	width: 85vw;
 	height: 18em;
 	text-align: center;
-	border: 1px solid black; 
 	margin-bottom: 0.5em;
 }
 
 .start-screen p {
 	width: 90%;
-	margin: 0 auto 0.5em auto;
+	margin: 0 auto 0.7em auto;
+	letter-spacing: 0.03em;
+}
+
+.timer {
+	font-size: 1.2em;
 }
 
 .question-wrapper {
@@ -48,6 +57,10 @@ h1 {
 }
 
 .answer-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 85vw;
 	height: 15em;
 	text-align: center;
@@ -91,9 +104,8 @@ footer {
 /* screen mode toggle styles*/
 
 .dark-mode {
-	background-color: black;
+	background-color: #39395f;
 	color: white;
-	border-color: white;
 }
 
 .screen-toggle {
@@ -103,4 +115,16 @@ footer {
 	position: absolute;
 	top: 12px;
 	right: 12px;
+}
+
+/*******************************************
+----------------- Media Queries-------------
+*******************************************/
+
+/* -----------------411px----------------- */
+
+@media (min-width: 411px) {
+	body {
+		font-size: 16px;
+	}
 }

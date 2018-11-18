@@ -81,7 +81,7 @@
 		START.style.display = 'none';
 		//display question and answers
 		questionContainer.style.display = 'block';
-		answerWrapper.style.display = 'block';
+		answerWrapper.style.display = 'flex';
 		//hide instructions 
 		startScreen.style.display = 'none';
 		//display first question
@@ -129,6 +129,7 @@
 		ANSWERS.forEach((answer, index) => {
 			let markup = createMarkup(answer, index);
 			answerContainer = document.createElement('div');
+			answerContainer.style.width = '90%';
 			answerContainer.innerHTML = markup;
 			answerWrapper.appendChild(answerContainer);
 		})
