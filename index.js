@@ -40,7 +40,7 @@
 		},
 		questionSix = {
 			question: 'Who won the most Academy Awards?',
-			answers: ['Steven Speilberg', 'Walt Disney', 'James Cameron', 'Katherine Hepburn'],
+			answers: ['Steven Spielberg', 'Walt Disney', 'James Cameron', 'Katherine Hepburn'],
 			correctAnswer: 'Walt Disney'
 		},
 		questionSeven = {
