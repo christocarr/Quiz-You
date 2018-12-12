@@ -109,6 +109,8 @@
 	}
 
 	let displayScore = (timeUp) => {
+		const TRY_AGIAN = document.getElementById('tryAgain');
+
 		//if time is not up then delete message
 		if (timeUp === undefined) {
 			timeUp = '';
@@ -123,8 +125,10 @@
 			answerWrapper.innerHTML = `${timeUp} You can do much better. Your score is: ${currentScore}`;
 		} else {
 			answerWrapper.innerHTML = `${timeUp} Try again. Your score is: ${currentScore}`;
+			TRY_AGIAN.style.display = 'block';
 		}
-		
+	
+
 		submit.style.display = 'none';
 	}
 

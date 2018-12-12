@@ -99,6 +99,11 @@ button:hover {
 	cursor: pointer;
 }
 
+/*------style to hide elements--------*/
+.hidden {
+	display: none;
+}
+
 footer {
 	display: flex;
 	align-items: center;
