@@ -50,3 +50,16 @@ const QUESTIONS_ONE = [
     correctAnswer: 'Capri'
   },
 ];
+
+const QUESTIONS_TWO = [
+  questionOne = {
+    question: 'Fish breathe through their?',
+    answers: ['Gills', 'Nostrils', 'Skin', 'Fins'],
+    correctAnswer: 'Gills'
+  },
+  questionTwo = {
+    question: '?',
+    answers: ['Gills', 'Nostrils', 'Skin', 'Fins'],
+    correctAnswer: 'Gills'
+  },
+]
