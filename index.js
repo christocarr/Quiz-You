@@ -110,7 +110,7 @@
 
 	let displayScore = (timeUp) => {
 		const TRY_AGIAN = document.getElementById('tryAgain');
-
+		
 		//if time is not up then delete message
 		if (timeUp === undefined) {
 			timeUp = '';
@@ -119,15 +119,22 @@
 		questionContainer.style.display = 'none';
 		if (currentScore > 7) {
 			answerWrapper.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
+			TRY_AGIAN.style.display = 'block';
 		} else if ( currentScore > 5 || currentScore === 7 ) {
 			answerWrapper.innerHTML = `${timeUp} You didn't do too badly. Your score is: ${currentScore}`;
+			TRY_AGIAN.style.display = 'block';
 		} else if ( currentScore === 5 || currentScore === 4 ) {
 			answerWrapper.innerHTML = `${timeUp} You can do much better. Your score is: ${currentScore}`;
+			TRY_AGIAN.style.display = 'block';
 		} else {
 			answerWrapper.innerHTML = `${timeUp} Try again. Your score is: ${currentScore}`;
 			TRY_AGIAN.style.display = 'block';
 		}
 	
+		TRY_AGIAN.addEventListener('click', function(ev) {
+			console.log(ev, 'reload window');
+			window.location.reload();
+		});
 
 		submit.style.display = 'none';
 	}
