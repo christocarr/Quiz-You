@@ -85,8 +85,8 @@ h2 {
 
 .radio-button:hover {
 	cursor: pointer;
-
 }
+/*-----------------------------------*/
 
 .start-button {
 	height: 25px;
@@ -95,8 +95,8 @@ h2 {
 }
 
 .submit {
-	height: 25px;
-	width: 33vw;
+	height: 30px;
+	width: 35vw;
 	margin: 1em 0 0 0;
 }
 
