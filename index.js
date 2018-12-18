@@ -84,7 +84,7 @@
 		function createMarkup(answer, index) {
 			return `
 				<label for="choice${index}" id="choice${index}Label">${answer}</label>
-				<input type="radio" name="answer" id="choice${index}">
+				<input class="radio-button" type="radio" name="answer" id="choice${index}">
 			`
 		}
 		
