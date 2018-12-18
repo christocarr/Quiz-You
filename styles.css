@@ -77,14 +77,19 @@ h2 {
 	cursor: pointer;
 }
 
-/*-----custom radio button styles-----*/
+/*-----custom label and radio button styles-----*/
 .radio-button {
 	width: 1.2em;
 	height: 1.2em;
+	float: right;
 }
 
 .radio-button:hover {
 	cursor: pointer;
+}
+
+.label {
+	border: solid 1px lightblue;
 }
 /*-----------------------------------*/
 
