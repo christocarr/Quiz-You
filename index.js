@@ -55,7 +55,7 @@
 	}
 
 	let checkAnswer = (userSelected, correctAnswer) => {
-		let userAnswer = userSelected[0].previousElementSibling.innerHTML;
+		let userAnswer = userSelected[0].previousElementSibling.textContent;
 		if(correctAnswer === userAnswer) {
 			currentScore++;
 		}
@@ -76,6 +76,7 @@
 		ANSWERS.forEach((answer, index) => {
 			let markup = createMarkup(answer, index);
 			answerContainer = document.createElement('div');
+			answerContainer.classList.add('answer-container');
 			answerContainer.style.width = '90%';
 			answerContainer.innerHTML = markup;
 			answerWrapper.appendChild(answerContainer);
@@ -83,9 +84,8 @@
 
 		function createMarkup(answer, index) {
 			return `
-				<label class="label" for="choice${index}" id="choice${index}Label">${answer}
-					<input class="radio-button" type="radio" name="answer" id="choice${index}">
-				</label>
+				<label class="label" for="choice${index}" id="choice${index}Label">${answer}</label>
+				<input class="radio-button" type="radio" name="answer" id="choice${index}">
 			`
 		}
 		

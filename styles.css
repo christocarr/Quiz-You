@@ -77,21 +77,22 @@ h2 {
 	cursor: pointer;
 }
 
-/*-----custom label and radio button styles-----*/
+.answer-container {
+	margin: 0 0 4px 0;
+	width: 95%;
+	border: 1px solid lightblue;
+}
+
+/* -----custom label and radio button styles-----*/
 .radio-button {
 	width: 1.2em;
 	height: 1.2em;
-	float: right;
 }
 
 .radio-button:hover {
 	cursor: pointer;
 }
-
-.label {
-	border: solid 1px lightblue;
-}
-/*-----------------------------------*/
+/*----------------------------------- */
 
 .start-button {
 	height: 25px;
