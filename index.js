@@ -110,12 +110,14 @@
 	}
 
 	let displayScore = (timeUp) => {
+		const MODAL = document.querySelector('.modal');
 		const TRY_AGIAN = document.getElementById('tryAgain');
 		
 		//if time is not up then delete message
 		if (timeUp === undefined) {
 			timeUp = '';
 		}
+		MODAL.style.display = 'flex';
 		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
 		if (currentScore > 7) {
