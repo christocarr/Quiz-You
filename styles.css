@@ -149,8 +149,8 @@ footer {
 }
 
 .modal {
-	display: none;
-	position: fixed;
+	/* display: none; */
+	position: absolute;
 	top: 50vh;
 	left: 50vw;
 	z-index: 1001;
@@ -159,6 +159,13 @@ footer {
 	height: 250px;
 	border: 1px black solid;
 	background-color: white;
+}
+
+.modal button {
+	position: fixed;
+	top: 70%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 /*******************************************
