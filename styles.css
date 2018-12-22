@@ -148,14 +148,16 @@ footer {
 	right: 12px;
 }
 
-.hide-modal {
-	display: none;
-}
-
-.display-modal {
-	width: 200px;
-	height: 150px;
+.modal {
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	z-index: 1001;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 250px;
 	border: 1px black solid;
+	background-color: white;
 }
 
 /*******************************************
