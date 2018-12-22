@@ -111,27 +111,24 @@
 
 	let displayScore = (timeUp) => {
 		const MODAL = document.querySelector('.modal');
+		const MESSAGE = document.querySelector('.score-message');
 		const TRY_AGIAN = document.getElementById('tryAgain');
 		
 		//if time is not up then delete message
 		if (timeUp === undefined) {
 			timeUp = '';
 		}
-		MODAL.style.display = 'flex';
+		MODAL.style.display = 'block';
 		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
 		if (currentScore > 7) {
-			answerWrapper.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
+			MESSAGE.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
 		} else if ( currentScore > 5 || currentScore === 7 ) {
-			answerWrapper.innerHTML = `${timeUp} You didn't do too badly. Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
+			MESSAGE.innerHTML = `${timeUp} You didn't do too badly. Your score is: ${currentScore}`;
 		} else if ( currentScore === 5 || currentScore === 4 ) {
-			answerWrapper.innerHTML = `${timeUp} You can do much better. Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
+			MESSAGE.innerHTML = `${timeUp} You can do much better. Your score is: ${currentScore}`;
 		} else {
-			answerWrapper.innerHTML = `${timeUp} Try again. Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
+			MESSAGE.innerHTML = `${timeUp} Try again. Your score is: ${currentScore}`;
 		}
 	
 		TRY_AGIAN.addEventListener('click', function(ev) {
