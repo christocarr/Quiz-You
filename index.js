@@ -20,6 +20,9 @@
 	submit.style.display = 'none';
 
 	START.onclick = () => { 
+		//hide select tag
+		const SELECT = document.getElementsByTagName('select')[0];
+		SELECT.style.display = 'none';
 		//display next(submit button)
 		submit.style.display = 'block';
 		//disable next(submit) button before user chooses answer
