@@ -21,23 +21,22 @@ header {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 68vh;
+	height: 65vh;
 }
 
 h1 {
-	margin: 3em 0 0 0;
+	margin: 1em 0 0 0;
 	font-size: 2.5em;
 	font-weight: normal;
 }
 
 h2 {
-	margin: 0 0 2em 0;
+	margin: 0 0 1em 0;
 	font-weight: normal;
 }
 
 .start-screen {
 	width: 85vw;
-	height: 18em;
 	text-align: center;
 	margin-bottom: 0.5em;
 }
@@ -158,7 +157,7 @@ footer {
 	width: 400px;
 	height: 250px;
 	border: 1px black solid;
-	background-color: darkcyan;
+	background-color: white;
 }
 
 .score-message {
@@ -178,6 +177,32 @@ footer {
 *******************************************/
 
 /* -----------------411px----------------- */
+
+@media (max-height: 450px) {
+	body > * {
+		font-size: 0.6em;
+	}
+
+	header {
+		height: 18vh;
+	}
+
+	h1 {
+		margin: 0.5em 0 0 0;
+	}
+
+	.wrapper {
+		height: 70vh;
+	}
+
+	.question-wrapper {
+		margin: 0.3em 0 0.3em 0;
+	}
+
+	.submit {
+		height: 1.5em;
+	}
+}
 
 @media (min-width: 411px) {
 	body {
