@@ -7,7 +7,9 @@
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
 	const SCREEN_TOGGLE = document.getElementById('screenToggle');
+	const SELECT = document.getElementsByTagName('select')[0];
 
+	let selectedQuestions;
 	let optionsArr;
 	let currentScore = 0;
 	let answeredQuestions = 0;
@@ -20,23 +22,43 @@
 	submit.style.display = 'none';
 
 	START.onclick = () => { 
+
 		//hide select tag
-		const SELECT = document.getElementsByTagName('select')[0];
 		SELECT.style.display = 'none';
+
 		//display next(submit button)
 		submit.style.display = 'block';
+
 		//disable next(submit) button before user chooses answer
 		submit.disabled = true;
+
 		//hide start button
 		START.style.display = 'none';
+
 		//display question and answers
 		questionContainer.style.display = 'block';
 		answerWrapper.style.display = 'flex';
+
 		//hide instructions 
 		startScreen.style.display = 'none';
+
+		//get user selected question set
+		switch(SELECT.selectedIndex) {
+			case 0:
+			selectedQuestions = QUESTIONS_ONE;
+			console.log(selectedQuestions, QUESTIONS_ONE)
+			break;
+			case 1:
+			selectedQuestions = QUESTIONS_TWO;
+			console.log(QUESTIONS_TWO)
+			break;
+			default:
+			selectedQuestions = QUESTIONS_ONE;
+		}
+
 		//display first question
 		let index = 0;
-		displayQuestion(index);
+		displayQuestion(index, selectedQuestions);
 
 		//set duration of countdown
 		const ONEMINUTE = 60 * 1;
@@ -65,17 +87,17 @@
 	}
 
 	SUBMIT.onclick = () => {
-		nextQuestion();
+		nextQuestion(selectedQuestions);
 		submit.disabled = true;
 		optionsArr.forEach(function(elem) {
 			elem.checked = false;
 		})
 	}
 
-	let displayQuestion = (index) => {
+	let displayQuestion = (index, selectedQuestions) => {
 		answerWrapper.innerHTML = '';
-		questionContainer.innerHTML = QUESTIONS_ONE[index].question;
-		const ANSWERS = QUESTIONS_ONE[index].answers;
+		questionContainer.innerHTML = selectedQuestions[index].question;
+		const ANSWERS = selectedQuestions[index].answers;
 		ANSWERS.forEach((answer, index) => {
 			let markup = createMarkup(answer, index);
 			answerContainer = document.createElement('div');
@@ -98,16 +120,18 @@
 		handleNext(optionsArr);
 	}
 
-	let nextQuestion = () => {
+	let nextQuestion = (selectedQuestions) => {
 		//get next question and answers in questions array
 		answeredQuestions++;
 		let index = answeredQuestions;
 		let currentQuestion = answeredQuestions + 1;
 		
 		//check if end of of questions array
-		if(currentQuestion <= QUESTIONS_ONE.length) {
-			displayQuestion(index);
+		if(currentQuestion <= selectedQuestions.length) {
+			//if not the carry on with displaying questions
+			displayQuestion(index, selectedQuestions);
 		} else {
+			//if end of questions array then display score
 			displayScore()
 		}
 	}
