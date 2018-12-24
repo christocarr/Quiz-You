@@ -16,14 +16,6 @@ header {
 	height: 22vh;
 }
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 65vh;
-}
-
 h1 {
 	margin: 1em 0 0 0;
 	font-size: 2.5em;
@@ -33,6 +25,14 @@ h1 {
 h2 {
 	margin: 0 0 1em 0;
 	font-weight: normal;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 65vh;
 }
 
 .start-screen {
@@ -53,9 +53,9 @@ h2 {
 
 .question-wrapper {
 	width: 85vw;
-	height: 1.7em;
+	height: auto;
 	text-align: center;
-	margin: 2.5em 0 0 0;
+	margin: 1.5em 0 0.5em 0;
 }
 
 .answer-wrapper {
@@ -78,7 +78,7 @@ h2 {
 
 .answer-container {
 	margin: 0 0 4px 0;
-	width: 95%;
+	width: 100%;
 	border: 1px solid lightblue;
 }
 
