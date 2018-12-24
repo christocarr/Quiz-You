@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-	margin: 0 0 1em 0;
+	margin: 0 0 1.5em 0;
 	font-weight: normal;
 }
 
@@ -32,7 +32,7 @@ h2 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 65vh;
+	height: 70vh;
 }
 
 .start-screen {
