@@ -58,8 +58,19 @@ const QUESTIONS_TWO = [
     correctAnswer: 'Gills'
   },
   questionTwo = {
-    question: '?',
-    answers: ['Gills', 'Nostrils', 'Skin', 'Fins'],
-    correctAnswer: 'Gills'
+    question: 'Why is the sky blue?',
+    answers: ['Light reflects off the ocean', 'Blue light is scattered in all directions', 'Space is the colour blue'],
+    correctAnswer: 'Blue light is scattered in all directions'
   },
+  questionThree = {
+    question: 'Which tree grows from an acorn?',
+    answers: ['Ash', 'Oak', 'Pine', 'Spruce'],
+    correctAnswer:'Oak' 
+  },
+  questionFour = {
+    question: 'How many degrees are there in a circle?',
+    answers: ['180', '45', '100', '360'],
+    correctAnswer:'360' 
+  },
+  
 ]
