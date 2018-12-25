@@ -72,5 +72,40 @@ const QUESTIONS_TWO = [
     answers: ['180', '45', '100', '360'],
     correctAnswer:'360' 
   },
-  
+  questionFive = {
+    question: 'What or who was said Saint Patrick to have expelled from Ireland?',
+    answers: ['Snakes', 'The English', 'Dragons', 'Druids'],
+    correctAnswer:'Snakes' 
+  },
+  questionSix = {
+    question: 'If you were in the city of Winnipeg, which Canadian province would you be in?',
+    answers: ['New Foundland', 'Manitoba', 'Quebec', 'Alberta'],
+    correctAnswer:'Manitoba' 
+  },
+  questionSeven = {
+    question: 'Which element is there more of than any other in the Earths crust?',
+    answers: ['Hydrogen', 'Iron', 'Oxygen'],
+    correctAnswer:'Oxygen' 
+  },
+  questionEight = {
+    question: 'What is the square root of 36?',
+    answers: ['3', '12', '6'],
+    correctAnswer:'6' 
+  },
+  questionNine = {
+    question: 'Which two seas are connected by the Suez Canal?',
+    answers: ['Mediterranean and Red Sea', 'Red and Arabian Sea', 'Mediterranean and Arabian Sea'],
+    correctAnswer:'Mediterranean and Red Sea' 
+  },
+  questionTen = {
+    question: 'In World War II, on what date did D-Day take place?',
+    answers: ['June 6, 1944', 'June 5, 1944', 'June 6, 1945', 'May 6, 1944'],
+    correctAnswer:'June 6, 1944' 
+  },
+]
+
+const QUESTIONS_THREE = [
+  questionOne = {
+    question: 'Coming soon...',
+  },
 ]
