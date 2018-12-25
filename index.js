@@ -45,15 +45,16 @@
 		//get user selected question set
 		switch(SELECT.selectedIndex) {
 			case 0:
-			selectedQuestions = QUESTIONS_ONE;
-			console.log(selectedQuestions, QUESTIONS_ONE)
-			break;
+				selectedQuestions = QUESTIONS_ONE;
+				break;
 			case 1:
-			selectedQuestions = QUESTIONS_TWO;
-			console.log(QUESTIONS_TWO)
-			break;
+				selectedQuestions = QUESTIONS_TWO;
+				break;
+			case 2:
+				selectedQuestions = QUESTIONS_THREE;
+				break;
 			default:
-			selectedQuestions = QUESTIONS_ONE;
+				selectedQuestions = QUESTIONS_ONE;
 		}
 
 		//display first question
@@ -73,7 +74,7 @@
 				//get user choice when radio button clicked
 				let userSelected = document.querySelectorAll('input[type="radio"]:checked');
 				//get correct answer;
-				let correctAnswer = QUESTIONS_ONE[answeredQuestions].correctAnswer;
+				let correctAnswer = selectedQuestions[answeredQuestions].correctAnswer;
 				checkAnswer(userSelected, correctAnswer);
 			})
 		});
