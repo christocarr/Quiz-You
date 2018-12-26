@@ -149,14 +149,28 @@
 		MODAL.style.display = 'block';
 		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
-		if (currentScore > 7) {
-			MESSAGE.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
-		} else if ( currentScore > 5 || currentScore === 7 ) {
-			MESSAGE.innerHTML = `${timeUp} You didn't do too badly. Your score is: ${currentScore}`;
-		} else if ( currentScore === 5 || currentScore === 4 ) {
-			MESSAGE.innerHTML = `${timeUp} You can do much better. Your score is: ${currentScore}`;
+		if (currentScore === 10) {
+			MESSAGE.innerHTML = `
+				<p>Well done, you did great!</p>
+				<p>Your score is: ${currentScore}</p>
+				`;
+		} else if (currentScore > 7) {
+			MESSAGE.innerHTML = `
+				<p class="time-up">${timeUp}</p>
+				<p>You almost scored the maximum points</p>
+				<p>Your score is: ${currentScore}</p>
+				`;
+		} else if (currentScore < 8 && currentScore > 4) {
+			MESSAGE.innerHTML = `
+				<p>${timeUp}</p>
+				<p>You didn't do too badly.</p>
+				<p>Your score is: ${currentScore}</p>
+				`;
 		} else {
-			MESSAGE.innerHTML = `${timeUp} Try again. Your score is: ${currentScore}`;
+			MESSAGE.innerHTML = `
+				<p>${timeUp}<p>
+				<p>You can do much better.</p>
+				<p>Your score is: ${currentScore}</p>`;
 		}
 	
 		TRY_AGIAN.addEventListener('click', function(ev) {
