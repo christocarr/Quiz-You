@@ -154,15 +154,20 @@ footer {
 	left: 50vw;
 	z-index: 1001;
 	transform: translate(-50%, -50%);
-	width: 400px;
-	height: 250px;
+	width: 300px;
+	height: 180px;
 	border: 1px black solid;
 	background-color: white;
+	text-align: center;
 }
 
 .score-message {
 	text-align: center;
-	margin: 4em 0 0 0;
+}
+
+.time-up {
+	color: red;
+	font-weight: bold;
 }
 
 .modal button {
