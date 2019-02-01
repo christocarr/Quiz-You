@@ -2,6 +2,7 @@ html {
 	height: 100%;
 }
 body {
+	height: 100%;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	margin: 0;
 	padding: 0;
@@ -144,6 +145,14 @@ footer {
 .dark-mode {
 	background-color: #39395f;
 	color: white;
+}
+
+.dark-mode .label {
+	color: white;
+}
+
+.dark-mode .button {
+	background-color: white;
 }
 
 .screen-toggle {
