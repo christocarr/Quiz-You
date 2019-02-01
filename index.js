@@ -8,6 +8,7 @@
 	const START = document.getElementById('startButton');
 	const SCREEN_TOGGLE = document.getElementById('screenToggle');
 	const SELECT = document.getElementById('select');
+	const SELECT_WRAPPER = document.getElementById('selectWrapper');
 
 	let selectedQuestions;
 	let optionsArr;
@@ -24,7 +25,7 @@
 	START.onclick = () => { 
 
 		//hide select tag
-		SELECT.style.display = 'none';
+		SELECT_WRAPPER.style.display = 'none';
 
 		//display next(submit button)
 		submit.style.display = 'block';
