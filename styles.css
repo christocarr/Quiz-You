@@ -79,7 +79,10 @@ h2 {
 .answer-container {
 	margin: 0 0 4px 0;
 	width: 100%;
-	border: 1px solid lightblue;
+}
+
+.answer-container:hover {
+	cursor: pointer;
 }
 
 /* -----custom label and radio button styles-----*/
@@ -93,10 +96,15 @@ h2 {
 }
 /*----------------------------------- */
 
+.button {
+	padding: 0; /*----reset bulma----*/
+}
+
 .start-button {
 	height: 25px;
 	width: 33vw;
 	margin: 1em 0 0 0;
+	
 }
 
 .submit {
@@ -156,7 +164,6 @@ footer {
 	transform: translate(-50%, -50%);
 	width: 300px;
 	height: 180px;
-	border: 1px black solid;
 	background-color: white;
 	text-align: center;
 }
