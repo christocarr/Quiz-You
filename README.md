@@ -19,8 +19,11 @@ Good luck and have fun.
 Shuffle questions
 
 Display question number
+<<<<<<< HEAD
 
 Progressive web app features
+=======
+>>>>>>> gh-pages
 
 ## Issues
 

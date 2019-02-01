@@ -2,6 +2,7 @@ html {
 	height: 100%;
 }
 body {
+	height: 100%;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	margin: 0;
 	padding: 0;
@@ -13,7 +14,7 @@ header {
 	display: flex;
 	align-content: center;
 	justify-content: center;
-	height: 22vh;
+	height: 18vh;
 }
 
 h1 {
@@ -79,7 +80,10 @@ h2 {
 .answer-container {
 	margin: 0 0 4px 0;
 	width: 100%;
-	border: 1px solid lightblue;
+}
+
+.answer-container:hover {
+	cursor: pointer;
 }
 
 /* -----custom label and radio button styles-----*/
@@ -93,10 +97,15 @@ h2 {
 }
 /*----------------------------------- */
 
+.button {
+	padding: 0; /*----reset bulma----*/
+}
+
 .start-button {
 	height: 25px;
 	width: 33vw;
 	margin: 1em 0 0 0;
+	
 }
 
 .submit {
@@ -138,6 +147,14 @@ footer {
 	color: white;
 }
 
+.dark-mode .label {
+	color: white;
+}
+
+.dark-mode .button {
+	background-color: white;
+}
+
 .screen-toggle {
 	width: 90px;
 	height: 20px;
@@ -154,18 +171,23 @@ footer {
 	left: 50vw;
 	z-index: 1001;
 	transform: translate(-50%, -50%);
-	width: 400px;
-	height: 250px;
-	border: 1px black solid;
+	width: 300px;
+	height: 180px;
 	background-color: white;
+	text-align: center;
 }
 
 .score-message {
 	text-align: center;
-	margin: 4em 0 0 0;
+}
+
+.time-up {
+	color: red;
+	font-weight: bold;
 }
 
 .modal button {
+	width: 50%;
 	position: fixed;
 	top: 70%;
 	left: 50%;

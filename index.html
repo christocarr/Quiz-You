@@ -7,18 +7,19 @@
 		<meta name="description" content="A quiz game">
 		<meta name="author" content="Christopher Carr">
 		<meta name="keywords" content="quiz, game, ">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<header>
-				<button class="screen-toggle" id="screenToggle">Dark Mode</button>
+				<button class="screen-toggle button" id="screenToggle">Dark Mode</button>
 				<h1>Get Quizzed</h1>
 		</header>
 		<div class="wrapper">
 			<div class="timer" id="timer"></div>
 			<div class="start-screen" id="startScreen">
 				<h2>Can you beat the clock?</h2>
-				<p>Choose a set of questions below</p>
+				<p>Choose a set of ten questions below</p>
 				<p>Answer the current question before moving on to the next</p>
 				<p>One point is awarded for every correctly answered question</p>
 				<p>You have one minute to complete the quiz</p>
@@ -29,20 +30,21 @@
 			</div>
 			<div class="answer-wrapper" id="answerWrapper">
 			</div>
-			<select>
+			<div class="select" id="select"> 
+				<select>
 					<option value="QUESTIONS_ONE">Question Set One</option>
 					<option value="QUESTIONS_TWO">Question Set Two</option>
 					<option value="QUESTIONS_THREE">Question Set Three</option>
-
 				</select>
+			</div>
 			<div class="buttons">
-				<button class="start-button" id="startButton">Start</button>
-				<button class="submit" id="submit">Next</button>
+				<button class="start-button button" id="startButton">Start</button>
+				<button class="submit button" id="submit">Next</button>
 			</div>
 		</div>
-		<div class="modal">
-			<p class="score-message"></p>
-			<button id="tryAgain">Try Again</button>
+		<div class="modal box">
+			<div class="score-message"></div>
+			<button class="button" id="tryAgain">Try Again</button>
 		</div>
 		<footer>
 			<p>Hosted on Github Pages</p>
