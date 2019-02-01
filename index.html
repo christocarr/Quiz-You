@@ -18,8 +18,9 @@
 		<div class="wrapper">
 			<div class="timer" id="timer"></div>
 			<div class="start-screen" id="startScreen">
-				<h2>Get Quizzed or Get Out</h2>
-				<p>Please select an answer to move onto the next question</p>
+				<h2>Can you beat the clock?</h2>
+				<p>Choose a set of ten questions below</p>
+				<p>Answer the current question before moving on to the next</p>
 				<p>One point is awarded for every correctly answered question</p>
 				<p>You have one minute to complete the quiz</p>
 				<p>Click start to begin</p>
@@ -29,11 +30,20 @@
 			</div>
 			<div class="answer-wrapper" id="answerWrapper">
 			</div>
+			<select>
+					<option value="QUESTIONS_ONE">Question Set One</option>
+					<option value="QUESTIONS_TWO">Question Set Two</option>
+					<option value="QUESTIONS_THREE">Question Set Three</option>
+
+				</select>
 			<div class="buttons">
 				<button class="start-button" id="startButton">Start</button>
 				<button class="submit" id="submit">Next</button>
-				<button class="hidden" id="tryAgain">Try Again</button>
 			</div>
+		</div>
+		<div class="modal">
+			<div class="score-message"></div>
+			<button id="tryAgain">Try Again</button>
 		</div>
 		<footer>
 			<p>Hosted on Github Pages</p>

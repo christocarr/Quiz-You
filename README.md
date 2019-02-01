@@ -1,6 +1,6 @@
 # get-quizzed
 
-A simple quiz game to test your front end development knowledge. Built with vanilla JavaScript, HTML and CSS.
+A simple quiz game to test your general knowledge. Built with vanilla JavaScript, HTML and CSS.
 
 Download the code and run the ```index.html``` file in your favourite browser.
 
@@ -14,10 +14,13 @@ Good luck and have fun.
 
 ~~Darkmode.~~
 
-Seperation of concerns. Need to seperate the questions from the code.
+~~Seperation of concerns. Need to seperate the questions from the code.~~
+
+Shuffle questions
+
+Display question number
 
 ## Issues
 
 No known issues.
 
-Media queries for medium and larger screens still needs to be coded.

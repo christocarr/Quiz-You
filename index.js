@@ -7,7 +7,9 @@
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
 	const SCREEN_TOGGLE = document.getElementById('screenToggle');
+	const SELECT = document.getElementsByTagName('select')[0];
 
+	let selectedQuestions;
 	let optionsArr;
 	let currentScore = 0;
 	let answeredQuestions = 0;
@@ -20,20 +22,44 @@
 	submit.style.display = 'none';
 
 	START.onclick = () => { 
+
+		//hide select tag
+		SELECT.style.display = 'none';
+
 		//display next(submit button)
 		submit.style.display = 'block';
+
 		//disable next(submit) button before user chooses answer
 		submit.disabled = true;
+
 		//hide start button
 		START.style.display = 'none';
+
 		//display question and answers
 		questionContainer.style.display = 'block';
 		answerWrapper.style.display = 'flex';
+
 		//hide instructions 
 		startScreen.style.display = 'none';
+
+		//get user selected question set
+		switch(SELECT.selectedIndex) {
+			case 0:
+				selectedQuestions = QUESTIONS_ONE;
+				break;
+			case 1:
+				selectedQuestions = QUESTIONS_TWO;
+				break;
+			case 2:
+				selectedQuestions = QUESTIONS_THREE;
+				break;
+			default:
+				selectedQuestions = QUESTIONS_ONE;
+		}
+
 		//display first question
 		let index = 0;
-		displayQuestion(index);
+		displayQuestion(index, selectedQuestions);
 
 		//set duration of countdown
 		const ONEMINUTE = 60 * 1;
@@ -48,34 +74,35 @@
 				//get user choice when radio button clicked
 				let userSelected = document.querySelectorAll('input[type="radio"]:checked');
 				//get correct answer;
-				let correctAnswer = QUESTIONS_ONE[answeredQuestions].correctAnswer;
+				let correctAnswer = selectedQuestions[answeredQuestions].correctAnswer;
 				checkAnswer(userSelected, correctAnswer);
 			})
 		});
 	}
 
 	let checkAnswer = (userSelected, correctAnswer) => {
-		let userAnswer = userSelected[0].previousElementSibling.innerHTML;
+		let userAnswer = userSelected[0].previousElementSibling.textContent;
 		if(correctAnswer === userAnswer) {
 			currentScore++;
 		}
 	}
 
 	SUBMIT.onclick = () => {
-		nextQuestion();
+		nextQuestion(selectedQuestions);
 		submit.disabled = true;
 		optionsArr.forEach(function(elem) {
 			elem.checked = false;
 		})
 	}
 
-	let displayQuestion = (index) => {
+	let displayQuestion = (index, selectedQuestions) => {
 		answerWrapper.innerHTML = '';
-		questionContainer.innerHTML = QUESTIONS_ONE[index].question;
-		const ANSWERS = QUESTIONS_ONE[index].answers;
+		questionContainer.innerHTML = selectedQuestions[index].question;
+		const ANSWERS = selectedQuestions[index].answers;
 		ANSWERS.forEach((answer, index) => {
 			let markup = createMarkup(answer, index);
 			answerContainer = document.createElement('div');
+			answerContainer.classList.add('answer-container');
 			answerContainer.style.width = '90%';
 			answerContainer.innerHTML = markup;
 			answerWrapper.appendChild(answerContainer);
@@ -83,8 +110,8 @@
 
 		function createMarkup(answer, index) {
 			return `
-				<label for="choice${index}" id="choice${index}Label">${answer}</label>
-				<input type="radio" name="answer" id="choice${index}">
+				<label class="label" for="choice${index}" id="choice${index}Label">${answer}</label>
+				<input class="radio-button" type="radio" name="answer" id="choice${index}">
 			`
 		}
 		
@@ -94,41 +121,56 @@
 		handleNext(optionsArr);
 	}
 
-	let nextQuestion = () => {
+	let nextQuestion = (selectedQuestions) => {
 		//get next question and answers in questions array
 		answeredQuestions++;
 		let index = answeredQuestions;
 		let currentQuestion = answeredQuestions + 1;
 		
 		//check if end of of questions array
-		if(currentQuestion <= QUESTIONS_ONE.length) {
-			displayQuestion(index);
+		if(currentQuestion <= selectedQuestions.length) {
+			//if not the carry on with displaying questions
+			displayQuestion(index, selectedQuestions);
 		} else {
+			//if end of questions array then display score
 			displayScore()
 		}
 	}
 
 	let displayScore = (timeUp) => {
+		const MODAL = document.querySelector('.modal');
+		const MESSAGE = document.querySelector('.score-message');
 		const TRY_AGIAN = document.getElementById('tryAgain');
 		
 		//if time is not up then delete message
 		if (timeUp === undefined) {
 			timeUp = '';
 		}
+		MODAL.style.display = 'block';
 		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
-		if (currentScore > 7) {
-			answerWrapper.innerHTML = `Well done, you did great! Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
-		} else if ( currentScore > 5 || currentScore === 7 ) {
-			answerWrapper.innerHTML = `${timeUp} You didn't do too badly. Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
-		} else if ( currentScore === 5 || currentScore === 4 ) {
-			answerWrapper.innerHTML = `${timeUp} You can do much better. Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
+		if (currentScore === 10) {
+			MESSAGE.innerHTML = `
+				<p>Well done, you did great!</p>
+				<p>Your score is: ${currentScore}</p>
+				`;
+		} else if (currentScore > 7) {
+			MESSAGE.innerHTML = `
+				<p class="time-up">${timeUp}</p>
+				<p>You almost scored the maximum points</p>
+				<p>Your score is: ${currentScore}</p>
+				`;
+		} else if (currentScore < 8 && currentScore > 4) {
+			MESSAGE.innerHTML = `
+				<p>${timeUp}</p>
+				<p>You didn't do too badly.</p>
+				<p>Your score is: ${currentScore}</p>
+				`;
 		} else {
-			answerWrapper.innerHTML = `${timeUp} Try again. Your score is: ${currentScore}`;
-			TRY_AGIAN.style.display = 'block';
+			MESSAGE.innerHTML = `
+				<p>${timeUp}<p>
+				<p>You can do much better.</p>
+				<p>Your score is: ${currentScore}</p>`;
 		}
 	
 		TRY_AGIAN.addEventListener('click', function(ev) {
