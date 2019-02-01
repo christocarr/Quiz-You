@@ -7,7 +7,7 @@
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
 	const SCREEN_TOGGLE = document.getElementById('screenToggle');
-	const SELECT = document.getElementsByTagName('select')[0];
+	const SELECT = document.getElementById('select');
 
 	let selectedQuestions;
 	let optionsArr;
