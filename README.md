@@ -20,6 +20,8 @@ Shuffle questions
 
 Display question number
 
+Progressive web app features
+
 ## Issues
 
 No known issues.
