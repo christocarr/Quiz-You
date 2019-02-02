@@ -1,0 +1,14 @@
+{
+  "name": "Get Quizzed",
+  "short_name": "Get Quizzed",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "",
+  "background_color": "",
+  "icons": [
+    {
+      
+    }
+  ]
+}
