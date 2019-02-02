@@ -21,6 +21,7 @@ Shuffle questions
 Display question number
 
 Progressive web app features
+ - service worker
 
 ## Issues
 
