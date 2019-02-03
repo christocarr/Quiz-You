@@ -4,11 +4,11 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "theme_color": "",
-  "background_color": "",
+  "theme_color": "#a9a9a9",
+  "background_color": "#a9a9a9",
   "icons": [
     {
-      
+
     }
   ]
 }
