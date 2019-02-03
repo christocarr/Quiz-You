@@ -1,9 +1,9 @@
-const CACHE_NAME = 'cache-v2';
+const CACHE_NAME = 'cache-v3';
 const CACHE_ASSETS = [
-  'index.html',
+  '/',
   '/css/main.css',
-  '/scripts',
-  '/data',
+  'scripts/index.js',
+  'data/questions.js',
 ];
 
 self.addEventListener('install', ev => {
@@ -13,7 +13,7 @@ self.addEventListener('install', ev => {
       .then(cache => {
         cache.addAll(CACHE_ASSETS);
       })
-      .then(()=> self.skipWaiting())
+      .then(() => self.skipWaiting())
   );
 });
 
