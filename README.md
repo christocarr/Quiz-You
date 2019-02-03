@@ -21,7 +21,7 @@ Shuffle questions
 Display question number
 
 Progressive web app features
- - service worker
+~~ - service worker~~
  - manifest.json
 
 ## Issues
