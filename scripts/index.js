@@ -241,16 +241,16 @@
 		}
 	})
 
+
+	//register service worker
 	if('serviceWorker' in navigator) {
 		window.addEventListener('load', () => {
-			navigator.serviceWorker.register('/sw.js').then((registration) => {
-				console.log('Service worker registration was successful:', registration.scope);
-			}, (err) => {
-				console.log('ServiceWorker registration failed:', err);
-			});
-		})
+			navigator.serviceWorker
+			.register('sw.js')
+			.then(registration => console.log('Service worker registration was successful:'))
+			.catch(err => console.log(`ServiceWorker registration failed: ${err}`))
+		});
 	}
-	
 
 })()
 
