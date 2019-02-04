@@ -1,5 +1,13 @@
 {
+  "app": {
+    "background": {
+
+    }
+  },
+  "manifest_version": 1,
   "name": "Get Quizzed",
+  "default_locale": "en",
+  "description": "A general knowlege quiz",
   "short_name": "Get Quizzed",
   "start_url": "/",
   "scope": "/",
