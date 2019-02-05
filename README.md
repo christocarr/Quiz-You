@@ -21,10 +21,9 @@ Shuffle questions
 Display question number
 
 Progressive web app features
-~~ - service worker~~
+ - service worker
  - manifest.json
 
 ## Issues
 
-No known issues.
-
+Time's up still appears when user finishes a quiz.
