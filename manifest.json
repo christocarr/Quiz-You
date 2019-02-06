@@ -3,17 +3,14 @@
   "name": "Get Quizzed",
   "default_locale": "en",
   "description": "A general knowlege quiz",
-  "short_name": "Get Quizzed",
-  "start_url": "/",
-  "scope": "/",
+  "short_name": "Quizzed",
+  "start_url": "/index.html",
   "display": "standalone",
   "theme_color": "#a9a9a9",
   "background_color": "#a9a9a9",
-  "icons": [
-    {
+  "icons": [{
       "src": "./images/icon.png",
       "type": "image/png",
       "sizes": "144x144"
-    }
-   ]
+    }]
 }
