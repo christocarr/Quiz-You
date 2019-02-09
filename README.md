@@ -16,12 +16,12 @@ Good luck and have fun.
 
 ~~Seperation of concerns. Need to seperate the questions from the code.~~
 
-Shuffle questions
+~~Shuffle questions~~
 
 Display question number
 
 Progressive web app features
-~~ - service worker~~
+ - ~~service worker~~
  - manifest.json
 
 ## Issues
