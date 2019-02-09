@@ -33,33 +33,6 @@ self.addEventListener('activate', ev => {
   );
 });
 
-// self.addEventListener('fetch', ev => {
-//   ev.respondWith(
-//     fetch(ev.request).catch(() => caches.match(ev.request))
-//   );
-// });
-
-// let cacheName = 'v1';
-// let assets = [
-//   '/index.html',
-//   '/css/main.css'
-// ]
-
-// self.addEventListener('install', (ev) => {
-//   console.log('install', ev);
-
-// });
-
-// self.addEventListener('activate', (ev) => {
-//   console.log('activate');
-//   ev.waitUntil(
-//     caches.open(cacheName).then(cache => {
-//       cache.addAll(assets);
-//     })
-//   )
-//   console.log(cacheName);
-// });
-
 self.addEventListener('fetch', (ev) => {
   console.log('fetch', ev.request.url);
  ev.respondWith(
