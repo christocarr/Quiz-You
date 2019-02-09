@@ -58,6 +58,9 @@
 				selectedQuestions = QUESTIONS_ONE;
 		}
 
+		//shuffle selected questions
+		shuffleQuestions(selectedQuestions);
+
 		//display first question
 		let index = 0;
 		displayQuestion(index, selectedQuestions);
@@ -65,6 +68,15 @@
 		//set duration of countdown
 		const ONEMINUTE = 60 * 1;
 		startTimer(ONEMINUTE, timerContainer);
+	}
+
+	//shuffle questions array is selectedQuestions
+	function shuffleQuestions(array) {
+		for(let i = array.length -1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]]
+		}
+		return array;
 	}
 
 	//enable next button on radio button click
