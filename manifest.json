@@ -4,7 +4,7 @@
   "default_locale": "en",
   "description": "A general knowlege quiz",
   "short_name": "Quizzed",
-  "start_url": "https://christocarr.github.io/get-quizzed/",
+  "start_url": "/",
   "theme_color": "#a9a9a9",
   "background_color": "#a9a9a9",
   "icons": [{
