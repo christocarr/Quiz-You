@@ -223,8 +223,12 @@ footer {
 /* -----------------411px----------------- */
 
 @media (max-height: 450px) {
-	body > * {
-		font-size: 0.6em;
+	/* body > * {
+		font-size: 0.8em;
+	} */
+
+	.start-screen {
+		font-size: 0.7em;
 	}
 
 	header {
@@ -232,7 +236,12 @@ footer {
 	}
 
 	h1 {
-		margin: 0.5em 0 0 0;
+		margin: 0.7em 0 0 0;
+		font-size: 1.5em;
+	}
+
+	h2 {
+		font-size: 1.1em;
 	}
 
 	.wrapper {
@@ -243,8 +252,17 @@ footer {
 		margin: 0.3em 0 0.3em 0;
 	}
 
+	.label {
+		font-size: 0.8rem;
+	}
+
 	.submit {
 		height: 1.5em;
+	}
+
+	.select select {
+		font-size: 0.8rem;
+		height: 35px;
 	}
 }
 
