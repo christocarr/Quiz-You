@@ -106,6 +106,8 @@ const QUESTIONS_TWO = [
 
 const QUESTIONS_THREE = [
   questionOne = {
-    question: 'Coming soon...',
+    question: 'In which decade did Roger Bannister run the world’s first recorded four minute mile?',
+    answers: ['1940s', '1950s', '1960s'],
+    correctAnswer:'1950s' 
   },
 ]
