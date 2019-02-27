@@ -126,8 +126,33 @@ const QUESTIONS_THREE = [
     correctAnswer: 'Bill and Melinda Gates Foundation',
   },
   questionFive = {
-    question: `Which is the larger island; Greenland or Iceland`,
-    answers: [`Greenland`, `Iceland`],
-    correctAnswer: `Greenland`
+    question: 'Which is the larger island; Greenland or Iceland?',
+    answers: ['Greenland', 'Iceland'],
+    correctAnswer: 'Greenland'
+  },
+  questionSix = {
+    question: `What is the hardest tissue in a mammal's body?`,
+    answers: ['Lip', ' Enamel', 'Aorta', 'Medulla'],
+    correctAnswer: 'Enamel'
+  },
+  questionSeven = {
+    question: 'An endangered species is at risk of extinction?',
+    answers: ['True', 'False'],
+    correctAnswer: 'True'
+  },
+  questionEight = {
+    question: 'Seaweed is from what?',
+    answers: ['Algae', 'Fungus', 'Fish', 'Bacteria'],
+    correctAnswer: 'Algae'
+  },
+  questionNine = {
+    question: 'Which landlocked country is completly surrounded by one country?',
+    answers: ['Lesotho', 'Luxembourg', 'Burkina Faso'],
+    correctAnswer: 'Lesotho'
+  },
+  questionTen = {
+    question: 'The Canadian city of Toronto used to be known as which British city',
+    answers: ['Bristol', 'York', 'London', 'Glasgow'],
+    correctAnswer: 'York'
   }
 ]
