@@ -110,4 +110,24 @@ const QUESTIONS_THREE = [
     answers: ['1940s', '1950s', '1960s'],
     correctAnswer:'1950s' 
   },
+  questionTwo = {
+    question: 'In a car, what does ABS stand for?',
+    answers: ['Anti-lock Bracking System', 'All Bearing System', 'Abrasive Boost Steering'],
+    correctAnswer: 'Anti-lock Bracking System'
+  },
+  questionThree = {
+    question: `Why don't cows drink milk?`,
+    answers: ['Becuase they lack toes', 'Because they would rather drink water', ],
+    correctAnswer: 'Because they lack toes'
+  },
+  questionFour = {
+    question: 'Bill Gates is known for his work in which non-profit organisation?',
+    answers: ['Bill and Melinda Gates Foundation', 'Microsoft', 'UNESCO'],
+    correctAnswer: 'Bill and Melinda Gates Foundation',
+  },
+  questionFive = {
+    question: `Which is the larger island; Greenland or Iceland`,
+    answers: [`Greenland`, `Iceland`],
+    correctAnswer: `Greenland`
+  }
 ]
