@@ -108,16 +108,16 @@ const QUESTIONS_THREE = [
   questionOne = {
     question: 'In which decade did Roger Bannister run the world’s first recorded four minute mile?',
     answers: ['1940s', '1950s', '1960s'],
-    correctAnswer:'1950s' 
+    correctAnswer: '1950s' 
   },
   questionTwo = {
     question: 'In a car, what does ABS stand for?',
-    answers: ['Anti-lock Bracking System', 'All Bearing System', 'Abrasive Boost Steering'],
-    correctAnswer: 'Anti-lock Bracking System'
+    answers: ['Anti-lock Braking System', 'All Bearing System', 'Abrasive Boost Steering'],
+    correctAnswer: 'Anti-lock Braking System'
   },
   questionThree = {
     question: `Why don't cows drink milk?`,
-    answers: ['Becuase they lack toes', 'Because they would rather drink water', ],
+    answers: ['Because they lack toes', 'Because they would rather drink water', ],
     correctAnswer: 'Because they lack toes'
   },
   questionFour = {
@@ -132,7 +132,7 @@ const QUESTIONS_THREE = [
   },
   questionSix = {
     question: `What is the hardest tissue in a mammal's body?`,
-    answers: ['Lip', ' Enamel', 'Aorta', 'Medulla'],
+    answers: ['Lip', 'Enamel', 'Aorta', 'Medulla'],
     correctAnswer: 'Enamel'
   },
   questionSeven = {
