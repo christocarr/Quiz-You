@@ -1,6 +1,6 @@
 const CACHE_NAME = 'cache-v3';
 const CACHE_ASSETS = [
-  './',
+  '/',
   'index.html',
   '.css/main.css',
   '.scripts/index.js',
