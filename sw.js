@@ -15,7 +15,6 @@ self.addEventListener('install', ev => {
       .then(cache => {
         return cache.addAll(CACHE_ASSETS);
       })
-      // .then(() => self.skipWaiting())
   );
 });
 
@@ -41,25 +40,3 @@ self.addEventListener('activate', ev => {
     })
   );
 });
-
-// self.addEventListener('fetch', (ev) => {
-//   console.log('fetch', ev.request.url);
-//  ev.respondWith(
-//    caches.match(ev.request)
-//    .then(response => {
-//      if(response) {
-//        console.log('Found response in cache:', response);
-//        return response;
-//      }
-//      console.log('No response found in cache. About to fetch from network...');
-//      return fetch(ev.request)
-//      .then(response => {
-//         console.log('Response from network is:', response);
-//         return response;
-//      }, (error) => {
-//         console.log('Fetching failed:', error);
-//         throw error;
-//       });
-//    })
-//  );
-// });
