@@ -1,6 +1,8 @@
 const CACHE_NAME = 'cache-v4';
+//these urls do not work for gh-pages because of prefixes
+//eg /get-quizzed/index.html
 const CACHE_ASSETS = [
-  './',
+  'get-quizzed/',
   './index.html',
   './css/main.css',
   './scripts/index.js',
