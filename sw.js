@@ -11,13 +11,9 @@ const CACHE_ASSETS = [
 self.addEventListener('install', ev => {
   console.log('Service worker install event');
   ev.waitUntil(
-    caches
-      .open(CACHE_NAME)
+    caches.open(CACHE_NAME)
       .then(cache => {
         return cache.addAll(CACHE_ASSETS);
-      })
-      .then(cache => {
-        console.log('Assets cached', cache);
       })
       // .then(() => self.skipWaiting())
   );
