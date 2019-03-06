@@ -27,20 +27,20 @@ self.addEventListener('fetch', ev => {
   );
 });
 
-// self.addEventListener('activate', ev => {
-//   //remove unwanted caches
-//   ev.waitUntil(
-//     caches.keys().then(CACHE_NAME => {
-//       return Promise.all(
-//         CACHE_NAME.map(cache => {
-//           if(cache != CACHE_NAME) {
-//             return caches.delete(cache);
-//           }
-//         })
-//       );
-//     })
-//   );
-// });
+self.addEventListener('activate', ev => {
+  //remove unwanted caches
+  ev.waitUntil(
+    caches.keys().then(CACHE_NAME => {
+      return Promise.all(
+        CACHE_NAME.map(cache => {
+          if(cache != CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
+});
 
 // self.addEventListener('fetch', (ev) => {
 //   console.log('fetch', ev.request.url);
