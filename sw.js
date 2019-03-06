@@ -1,11 +1,11 @@
-const CACHE_NAME = 'cache-v3';
+const CACHE_NAME = 'cache-v4';
 const CACHE_ASSETS = [
   '/',
   'index.html',
-  '.css/main.css',
-  '.scripts/index.js',
-  '.data/questions.js',
-  '.manifest.json'
+  'css/main.css',
+  'scripts/index.js',
+  'data/questions.js',
+  'manifest.json'
 ];
 
 self.addEventListener('install', ev => {
@@ -13,9 +13,9 @@ self.addEventListener('install', ev => {
     caches
       .open(CACHE_NAME)
       .then(cache => {
-        cache.addAll(CACHE_ASSETS);
+        return cache.addAll(CACHE_ASSETS);
       })
-      .then(() => self.skipWaiting())
+      // .then(() => self.skipWaiting())
   );
 });
 
