@@ -1,10 +1,11 @@
 const CACHE_NAME = 'cache-v3';
 const CACHE_ASSETS = [
   './',
-  './css/main.css',
-  './scripts/index.js',
-  './data/questions.js',
-  './manifest.json'
+  'index.html',
+  '.css/main.css',
+  '.scripts/index.js',
+  '.data/questions.js',
+  '.manifest.json'
 ];
 
 self.addEventListener('install', ev => {
