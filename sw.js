@@ -1,15 +1,15 @@
 const CACHE_NAME = 'cache-v4';
 const CACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/css/main.css',
-  '/scripts/index.js',
-  '/data/questions.js',
-  '/manifest.json'
+  './',
+  './index.html',
+  './css/main.css',
+  './scripts/index.js',
+  './data/questions.js',
+  './manifest.json'
 ];
 
 self.addEventListener('install', ev => {
-  console.log('Service worker install event');
+  console.log('Service worker install event', ev);
   ev.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
