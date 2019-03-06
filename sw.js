@@ -2,12 +2,12 @@ const CACHE_NAME = 'cache-v4';
 //these urls do not work for gh-pages because of prefixes
 //eg /get-quizzed/index.html
 const CACHE_ASSETS = [
-  'get-quizzed/',
-  './index.html',
-  './css/main.css',
-  './scripts/index.js',
-  './data/questions.js',
-  './manifest.json'
+  '/get-quizzed/',
+  '/get-quizzed/index.html',
+  '/get-quizzed//css/main.css',
+  '/get-quizzed//scripts/index.js',
+  '/get-quizzed//data/questions.js',
+  '/get-quizzed//manifest.json'
 ];
 
 self.addEventListener('install', ev => {
