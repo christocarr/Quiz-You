@@ -14,6 +14,7 @@
 	let optionsArr;
 	let currentScore = 0;
 	let answeredQuestions = 0;
+	let timer;
 
 	//hide question and answers on startup
 	questionContainer.style.display = 'none';
@@ -147,18 +148,15 @@
 		} else {
 			//if end of questions array then display score
 			displayScore()
+			stopTimer();
 		}
 	}
 
 	let displayScore = (timeUp) => {
 		const MODAL = document.querySelector('.modal');
 		const MESSAGE = document.querySelector('.score-message');
-		const TRY_AGIAN = document.getElementById('tryAgain');
-		
-		//if time is not up then delete message
-		if (timeUp === undefined) {
-			timeUp = '';
-		}
+		const TRY_AGAIN = document.getElementById('tryAgain');
+
 		MODAL.style.display = 'block';
 		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
@@ -186,7 +184,7 @@
 				<p>Your score is: ${currentScore}</p>`;
 		}
 	
-		TRY_AGIAN.addEventListener('click', function(ev) {
+		TRY_AGAIN.addEventListener('click', function(ev) {
 			console.log(ev, 'reload window');
 			window.location.reload();
 		});
@@ -202,7 +200,7 @@
 		//display the time from start.onclick
 		display.textContent = '01:00';
 
-		let timer = setInterval(function() {
+		timer = setInterval(function() {
 
 			diff = duration - (((Date.now() - start) / 1000) | 0);
 			
@@ -228,11 +226,11 @@
 			};
 		}, 1000);
 
-		function stopTimer() {
-			clearInterval(timer);
-		};
-
 	}
+
+	function stopTimer() {
+		clearInterval(timer);
+	};
 
 	//toggle dark mode/light mode
 	SCREEN_TOGGLE.addEventListener('click', function() {
