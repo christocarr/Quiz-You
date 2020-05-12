@@ -111,6 +111,8 @@
 	}
 
 	let displayQuestion = (index, selectedQuestions) => {
+		// display question number
+		questionNumber.textContent = `Question ${index + 1}`
 		answerWrapper.innerHTML = '';
 		questionContainer.innerHTML = selectedQuestions[index].question;
 		const ANSWERS = selectedQuestions[index].answers;
