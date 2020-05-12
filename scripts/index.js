@@ -157,6 +157,8 @@
 		const MESSAGE = document.querySelector('.score-message');
 		const TRY_AGAIN = document.getElementById('tryAgain');
 
+
+
 		MODAL.style.display = 'block';
 		timerContainer.style.display = 'none';
 		questionContainer.style.display = 'none';
