@@ -52,6 +52,11 @@ h2 {
 	font-size: 1.2em;
 }
 
+.question-number {
+	margin: 1rem 0;
+	font-size: 1.3rem;
+}
+
 .question-wrapper {
 	width: 85vw;
 	height: auto;
