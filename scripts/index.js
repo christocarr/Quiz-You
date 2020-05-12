@@ -157,7 +157,10 @@
 		const MESSAGE = document.querySelector('.score-message');
 		const TRY_AGAIN = document.getElementById('tryAgain');
 
-
+		//if time is not up then delete message
+		if (timeUp === undefined) {
+			timeUp = '';
+		}
 
 		MODAL.style.display = 'block';
 		timerContainer.style.display = 'none';
