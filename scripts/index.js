@@ -3,6 +3,7 @@
 	let timerContainer = document.getElementById('timer');
 	let answerWrapper = document.getElementById('answerWrapper');
 	let startScreen = document.getElementById('startScreen');
+	let questionNumber = document.getElementById('questionNumber')
 
 	const SUBMIT = document.getElementById('submit');
 	const START = document.getElementById('startButton');
