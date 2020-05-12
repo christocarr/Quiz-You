@@ -18,7 +18,7 @@ Good luck and have fun.
 
 ~~Shuffle questions~~
 
-Display question number
+~~Display question number~~
 
 Progressive web app features
  - ~~service worker~~
